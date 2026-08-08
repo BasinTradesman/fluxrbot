@@ -6,6 +6,14 @@ The engine updates itself on the server; app versions are installed by you.
 Also published at [fluxrbot.com/changelog](https://fluxrbot.com/changelog/).
 Product and pricing: [fluxrbot.com](https://fluxrbot.com) · Have a key? [activate and download](https://app.fluxrbot.info)
 
+## 1.0.2 — 2026-08-08
+
+- Fixed: every screen can now scroll — a layout bug clipped all lists to one viewport
+- Paper balance now says what it is made of: total across per-strategy accounts, with the starting sum shown
+- Refusal reasons in the daily summary group by cause instead of splitting one cause across price variants
+- Venues screen: what is read live today, how Kalshi will connect, why Polymarket stays signal-only
+- Window title no longer carries a stale version string
+
 ## 1.0.1 — 2026-08-08
 
 - Updates screen: what you have, what is available, and the full version history with descriptions
