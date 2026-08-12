@@ -6,6 +6,21 @@ The engine updates itself on the server; app versions are installed by you.
 Also published at [fluxrbot.com/changelog](https://fluxrbot.com/changelog/).
 Product and pricing: [fluxrbot.com](https://fluxrbot.com) · Have a key? [activate and download](https://app.fluxrbot.info)
 
+## 1.0.3 — 2026-08-12
+
+- Fixed: external links open again — the update button, Telegram connect and every outbound link silently did nothing in 1.0.0–1.0.2 (a missing URL permission in the desktop shell)
+- If opening the browser ever fails, the app now copies the link and shows it to you instead of staying silent
+- New engine refusal reasons translated in all four languages: news already priced in, forecast disagreeing with the market too much, price-band statistics still thin, strategy position limits
+
+## Engine — 2026-08-12
+
+- New contrarian strategy: fades the crowd's systematic overpricing of YES, with the edge measured on our own settled outcomes and re-measured every run
+- Arbitrage baskets are now held to resolution — the forced 24-hour exit was paying the spread twice and turning locked profit into noise
+- High-confidence verdicts (0.70+) are held to resolution: measured hit rate 72–94% on settled outcomes
+- News-chasing gate: if the market already moved 5¢+ toward the verdict since publication, the engine passes — late entries were buying the crowd's reversal
+- Weather strategy learned its lesson: a forecast disagreeing with the market by 22¢+ is now treated as our error, not an opportunity; two open positions max
+- Probability calibration crossed 300 settled outcomes and is now applied — measured shift ceiling replaces the hand-picked constant, Kelly sizing engaged
+
 ## 1.0.2 — 2026-08-08
 
 - Fixed: every screen can now scroll — a layout bug clipped all lists to one viewport

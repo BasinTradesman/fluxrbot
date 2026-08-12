@@ -2,10 +2,7 @@
 
 Every decision the engine makes is written down, including the ones that did
 not become a trade. Each carries a stable code so the app can translate it and
-so the daily report can group by it — free-form text would scatter one reason
-across a hundred rows.
-
-These are the codes the journal can show you.
+so the daily report can group by it.
 
 ## Before the model is asked
 
@@ -14,6 +11,7 @@ These are the codes the journal can show you.
 | `book_at_edge` | market already priced at the edge |
 | `weak_match` | link to the contract too weak |
 | `not_news_driven` | this contract is settled by a forecast, not by news |
+| `book_no_crowd` | too little volume — a price without a crowd is held by someone's knowledge |
 
 ## What the model answered
 
@@ -34,6 +32,14 @@ These are the codes the journal can show you.
 | `longshot_too_cheap` | long shot: cheap contracts are systematically overpriced |
 | `forecast_edge_below` | the forecast does not diverge from the market enough |
 | `forecast_all_at_edge` | every bucket in the group is priced at the edge of the book |
+| `stat_thin` | not enough settled history in this price band yet |
+
+## Contrarian gates
+
+| Code | What it means |
+|---|---|
+| `priced_in` | the market has already priced this news in — chasing the crowd buys its reversal |
+| `forecast_too_good` | the forecast disagrees with the market too much — that gap is about us, not them |
 
 ## The order book said no
 
@@ -67,6 +73,7 @@ These are the codes the journal can show you.
 | `category_limit` | too much already riding on this category |
 | `correlated_limit` | already holding positions on the same subject |
 | `position_cap_tiny` | the position cap is smaller than a single contract here |
+| `strategy_position_cap` | the strategy is at its open-position limit |
 
 ## Nothing to decide
 

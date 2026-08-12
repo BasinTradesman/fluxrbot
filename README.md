@@ -84,7 +84,7 @@ instead of scattering.
 
 ## Strategies
 
-Four, each on its **own** separate paper account. Mixing two strategies into
+Five, each on its **own** separate paper account. Mixing two strategies into
 one account means never being able to tell them apart afterwards.
 
 | Strategy | What it looks for |
@@ -93,6 +93,7 @@ one account means never being able to tell them apart afterwards.
 | `group-arb` | Every outcome of one event trades for less than the dollar it must pay |
 | `cross-venue-arb` | Same question, two venues, two prices |
 | `weather` | A three-model forecast ensemble against the price of a temperature contract |
+| `no-bias` | Fades the crowd: our own settled history shows markets systematically overprice YES, so it buys NO where that overpricing is measured |
 
 Each strategy's page on the site states its assumption and, more importantly,
 **how it loses.** `group-arb` in particular required a lesson: "mutually
