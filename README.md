@@ -24,8 +24,8 @@ order book is already showing. When the two disagree by enough to survive the
 spread and the fees, that is a signal.
 
 Most of the time they do not disagree, and the bot says so. Out of roughly
-13,000 decisions recorded so far, **19 became trades.** The rest are written
-down with the reason they were rejected. That ratio is the product, not an
+38,000 decisions recorded so far, **about fifty became trades.** The rest are
+written down with the reason they were rejected. That ratio is the product, not an
 embarrassment: a bot that finds an opportunity every hour is not finding
 opportunities, it is finding noise.
 
@@ -132,16 +132,21 @@ number is not yet measurable, it is absent rather than approximated.
 
 The one that matters most is still open: **does the model beat the book?** The
 market price *is* the market's probability, so beating a coin flip proves
-nothing. As of this writing the honest answer is *not enough settled outcomes
-to say* — 2.3 usable ones accumulate per day, and the threshold is 200.
+nothing. As of this writing, 300+ settled outcomes are in: our probability
+score is essentially tied with the book's (Brier 0.0480 vs 0.0483), and the
+model's confidence finally means something — hit rate climbs from 57% in the
+low-confidence band to 94% in the highest. That crossed the threshold where
+calibration applies: the probability-shift ceiling is now measured nightly
+instead of hand-picked, and fractional Kelly sizing engaged. It is not yet
+enough to declare an edge, and live trading stays blocked until it is.
 
 Three measurement errors were found and fixed while trying to answer it, each
 of which made the engine look worse than it was: comparing against 50% when
 prediction-market prices systematically drift down, letting settlement prices
 count as "market movement", and treating many verdicts on one contract as
-independent observations. The corrected read is that there is **no measurable
-signal and no measurable anti-signal** — the data cannot answer yet, which is a
-different and more honest statement than the one we started with.
+independent observations. One systematic result did survive every correction:
+**YES resolves less often than its price implies, in every price band** — the
+crowd overpays for the event side. The fifth strategy trades exactly that.
 
 ---
 
