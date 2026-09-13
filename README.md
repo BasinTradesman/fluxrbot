@@ -1,41 +1,71 @@
-# FluxrBot
+<p align="center">
+  <a href="https://fluxrbot.com/?utm_source=github&utm_medium=banner"><img src="https://fluxrbot.com/img/x-banner-fluxrbot-2026.png" alt="FluxrBot: desktop trading bot for Polymarket and Kalshi" width="100%"></a>
+</p>
 
-**A prediction-market research bot that shows its work — including every trade it refused to make, and the measurement that its own model does not beat the market price.**
+<h1 align="center">FluxrBot</h1>
+
+<p align="center"><b>A Windows desktop bot for Polymarket and Kalshi that reads the news, applies the rules you set, and shows every decision it makes, including the trades it refused.</b></p>
+
+<p align="center">
+  <a href="https://github.com/BasinTradesman/fluxrbot/releases/latest"><img src="https://img.shields.io/github/v/release/BasinTradesman/fluxrbot?style=flat&color=FFB224&labelColor=0F0D12&label=release" alt="Latest release"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/docs%20license-CC%20BY%204.0-FFB224?style=flat&labelColor=0F0D12" alt="Documentation licensed CC BY 4.0"></a>
+  <a href="https://fluxrbot.com/?utm_source=github&utm_medium=badge"><img src="https://img.shields.io/website?url=https%3A%2F%2Ffluxrbot.com&style=flat&label=fluxrbot.com&up_color=FFB224&labelColor=0F0D12" alt="fluxrbot.com"></a>
+  <a href="https://x.com/fluxrbot"><img src="https://img.shields.io/badge/follow-%40fluxrbot-0F0D12?style=flat&logo=x&logoColor=white" alt="Follow @fluxrbot on X"></a>
+</p>
+
+<p align="center">
+  <a href="https://fluxrbot.com/?utm_source=github&utm_medium=readme">Website</a> ·
+  <a href="https://fluxrbot.com/docs/?utm_source=github&utm_medium=readme">Getting started</a> ·
+  <a href="CHANGELOG.md">Changelog</a> ·
+  <a href="https://github.com/BasinTradesman/fluxrbot/releases">Releases</a> ·
+  <a href="https://fluxrbot.com/tools/?utm_source=github&utm_medium=readme">Free tools</a> ·
+  <a href="https://github.com/BasinTradesman/fluxrbot/discussions">Discussions</a>
+</p>
+
+This repository holds the public documentation for FluxrBot: how the engine decides, what it refuses and why, where its data comes from, the changelog for every version, and the measured numbers behind the site. The application's source code is not here and will not be.
+
+*Already have a product key?* [Activate and download](https://app.fluxrbot.info).
+
+## What it does
+
+1. **Reads 52 news sources.** 37 polled feeds (government releases, SEC filings, wire services, major outlets, financial press) plus 15 streaming accounts where Reuters and AP publish first-hand. A streaming post reaches the database in 16 to 22 seconds; polled feeds take a median of 12 minutes.
+2. **Matches stories to contracts.** Every event is checked against about 1,300 live Kalshi and Polymarket contracts by entity and wording. Weak matches are dropped before the model is asked anything.
+3. **Executes the rules you set.** Risk appetite, position cap, daily turnover, exposure and category ceilings, drawdown halt, daily loss stop. Eight gates and two circuit breakers, checked in a fixed order. All of them are described in [docs/risk.md](docs/risk.md).
+4. **Shows every decision.** Trades and refusals sit in the same journal, each with a stable reason code. On a typical day the engine refuses thousands of candidates and takes a handful. The full list of codes is in [docs/refusal-reasons.md](docs/refusal-reasons.md).
+5. **Paper mode first.** Every trade is paper today. Live order routing is not switched on, and it stays off until the engine can show, on settled outcomes and against the real order book, that it earns after fees. The numbers below say whether it can.
+
+## How a trade happens
+
+Times are measured on the streaming path (Reuters or AP on Bluesky). Stories from polled feeds arrive minutes later and then go through the same steps.
+
+| When | What happens |
+|---|---|
+| T+0s | A story is published. |
+| T+16–22s | It is in the database, deduplicated against every other source reporting the same event. |
+| T+20s | Matched against live contracts. Most events match nothing and stop here. |
+| T+21s | The model reads the headline, the article and the current book price and answers three questions: does this bear on the outcome, which way, how sure. |
+| T+22s | The model is asked for the strongest objection to the trade. A strong objection cancels it; a weak one is recorded and shown anyway. |
+| T+23s | The candidate goes through the eight risk gates in order. The journal records the first gate that says no. |
+| T+24s | The order book is walked to find the real entry price. If the spread is too wide for the price the model expects, a limit order is posted instead. |
+| T+25s | A paper trade is opened, or a refusal is written with its reason. Either way it is in the app and, if connected, in your Telegram. |
+
+The first streaming post the engine ever received went the whole way in four seconds. It was refused.
+
+## Screenshots
+
+<p align="center">
+  <img src="https://fluxrbot.com/img/overview-screen.png" alt="Overview screen: paper balance, open positions, decisions today" width="32%">
+  <img src="https://fluxrbot.com/img/signals-screen.png" alt="Feed screen: paper trades and refusals in one list, each with its reason" width="32%">
+  <img src="https://fluxrbot.com/img/settings-screen.png" alt="Settings screen: risk appetite, venues, updates, Telegram" width="32%">
+</p>
+
+## Measured, not claimed
+
+Every number in this section is regenerated from the live database every six hours by the same job that feeds the site. If a number is not yet measurable, it is absent rather than estimated.
 
 [![settled outcomes](https://img.shields.io/endpoint?url=https%3A%2F%2Ffluxrbot.com%2Fapi%2Fbadge%3Fkind%3Doutcomes)](https://fluxrbot.com/api/truth)
 [![model vs price](https://img.shields.io/endpoint?url=https%3A%2F%2Ffluxrbot.com%2Fapi%2Fbadge%3Fkind%3Dmodel)](https://fluxrbot.com/api/truth)
 [![paper trades](https://img.shields.io/endpoint?url=https%3A%2F%2Ffluxrbot.com%2Fapi%2Fbadge%3Fkind%3Dpaper)](https://fluxrbot.com/api/truth)
-
-### → [**fluxrbot.com**](https://fluxrbot.com/?utm_source=github&utm_medium=readme&utm_campaign=top)
-
-[How it works](https://fluxrbot.com/?utm_source=github&utm_medium=readme#how) ·
-[Strategies](https://fluxrbot.com/strategies/?utm_source=github&utm_medium=readme) ·
-[What the engine refuses](https://fluxrbot.com/risk/?utm_source=github&utm_medium=readme) ·
-[Getting started](https://fluxrbot.com/docs/?utm_source=github&utm_medium=readme) ·
-[Free tools](https://fluxrbot.com/tools/?utm_source=github&utm_medium=readme) ·
-[Blog](https://fluxrbot.com/blog/?utm_source=github&utm_medium=readme) ·
-[Changelog](CHANGELOG.md) ·
-[**Releases ↓**](https://github.com/BasinTradesman/fluxrbot/releases)
-
-*Already have a product key?* → [activate and download](https://app.fluxrbot.info)
-
----
-
-## Why this exists
-
-Every prediction-market bot on GitHub and Telegram sells a win rate. In 2026 the independent numbers are brutal: ~70% of Polymarket addresses lose money, 0.04% of addresses take 70% of the profit, and the best language models score *at* the market price on settled outcomes, not above it (Prophet Arena, AIA Forecaster, PolyBench, Prediction Arena — all 2025–2026).
-
-We measured the same thing on our own pipeline — and got the same answer. So FluxrBot is not a signal machine. It is the tool you open **before** you trade:
-
-- **Check** a contract (paste a Kalshi or Polymarket link): live order book on $50 each side, taker vs maker fee, breakeven probability, how contracts at this price and horizon actually resolved in our 7,000+ settled outcomes, what news touched it and what the model read into it, and which resolution-rule phrases start disputes.
-- **Watch** the contracts where your money is: when a story lands that the model reads as moving the outcome, you get it in Telegram — marked *with* or *against* your position.
-- **Read the refusal journal**: every decision the engine made, with the reason, next to the few it turned into paper trades.
-
-Everything is measured. Where a number is not yet measurable, it is absent rather than approximated.
-
----
-
-## Measured, not claimed
 
 <!-- measured:start -->
 _Updated 2026-09-13 from the live database. Same numbers: [`/api/truth`](https://fluxrbot.com/api/truth) · [strategies page](https://fluxrbot.com/strategies/?utm_source=github&utm_medium=readme)._
@@ -80,55 +110,68 @@ Total closed 69, net +$32.23. Weather's plus is one +$95 trade on a 12-trade sam
 Model outages in the last 60 days: 21 day(s) (2026-08-22 → 2026-09-11, gateway balance — now alerted).
 <!-- measured:end -->
 
----
-
-## What it does
-
-**Reads.** 37 news feeds plus 15 Bluesky accounts on a streaming connection (Reuters and AP publish there first-hand; a post reaches the database in 16–22 seconds against a 12-minute median for polled feeds).
-
-**Matches.** Every event is matched against ~1,300 live contracts on Kalshi and Polymarket by entity and wording. The entity dictionary extends itself nightly.
-
-**Judges.** Contracts that survive matching go to the model with the headline, the article body and the current book price. Three questions: does this bear on the outcome, which way, how sure.
-
-**Argues with itself.** Every trade candidate gets the question *what is the strongest objection to this bet?* A strong objection cancels the trade; a weak one is recorded and shown anyway.
-
-**Prices against the real book.** Entry is computed by walking the actual order book. When the spread eats the edge, the engine posts a limit order instead — measured fill rate 80%, average spread crossed 3.7¢ against 15.5¢ for market orders. Fees are the venues' real 2026 schedules: Kalshi 7% × p × (1−p) taker, Polymarket 4–7% × p × (1−p) by category, makers free.
-
-**Refuses.** Eight risk gates in order of weight, two circuit breakers, one journal for trades and refusals alike.
-
-**Checks, watches, alerts.** The pre-trade check and the watchlist are in the desktop app and in the Telegram bot (`/check <link>`, `/watch <link> [yes|no] [price]`, `/list`).
-
-**Updates itself, if you let it.** From 1.0.4 the app installs signed updates over the air; a checkbox at activation (on by default) controls it, and you get an email either way.
-
----
-
 ## What it does not do
 
-- **No live trading.** Everything runs on paper until the engine can show — on settled outcomes, against the *book price* — that it earns after fees. It cannot yet, and this page says so above.
-- **No income promises.** Not on the site, not here, not ever.
-- **No wallet connection.** Kalshi connects through an API key that never leaves your machine. Polymarket needs a wallet private key to mint trading credentials, so Polymarket stays signal-only.
-- **No 5- and 15-minute crypto markets.** 55–62% of that volume is bots with sub-100 ms latency; we do not pretend to compete there.
-- **The installer is not certificate-signed.** Windows SmartScreen warns on first manual install; over-the-air updates are signed with our own key and skip it.
+- **No live trading yet.** See above.
+- **No income promises.** Not on the site, not here.
+- **No wallet connection.** Kalshi will connect through an API key that stays on your machine. Polymarket needs a wallet private key to trade, which the app will never ask for, so Polymarket is read and match only.
+- **No 5- and 15-minute crypto markets.** Most of that volume is bots with sub-100 ms latency. We do not pretend to compete there.
+- **No certificate-signed installer.** Windows SmartScreen warns on the first manual install (More info → Run anyway). Over-the-air updates are signed with our own key and skip the warning.
+
+## Get started
+
+1. **Windows 10 or 11.** Download the `.msi` from the [latest release](https://github.com/BasinTradesman/fluxrbot/releases/latest). The SHA-256 of every installer is in the release notes.
+2. **Get a product key** at [fluxrbot.com](https://fluxrbot.com/?utm_source=github&utm_medium=getting). The trial is 3 days, no card, and ends by itself. After that it is $2,499 a month, cancel anytime.
+3. **Activate**, pick a risk appetite, connect Telegram if you want alerts on your phone. The app starts in paper mode and stays there.
+4. **Read the feed.** The [getting-started guide](https://fluxrbot.com/docs/?utm_source=github&utm_medium=readme) explains each screen and how to read a refusal.
+
+Updates: from 1.0.4 the app installs signed updates on its own if you leave the checkbox on at activation. Turn it off and you get a banner and an Update now button instead. Either way you get an email about every version.
+
+## Docs
+
+| Page | What is in it |
+|---|---|
+| [docs/risk.md](docs/risk.md) | The eight gates and two circuit breakers, in the order they are checked, and why each is shaped the way it is |
+| [docs/refusal-reasons.md](docs/refusal-reasons.md) | Every reason code the journal can show, generated from the engine's own table |
+| [docs/sources.md](docs/sources.md) | The 52 sources, their weights, the streaming connection, and the feed failures we learned from |
+| [docs/free-tools.md](docs/free-tools.md) | The seven calculators on the site and how they relate to the engine |
+| [docs/engine-truth.json](docs/engine-truth.json) | The measured numbers above, machine-readable, same source as `/api/truth` |
+
+The full guide, the strategies page and the risk disclosure live on the site: [fluxrbot.com/docs](https://fluxrbot.com/docs/?utm_source=github&utm_medium=readme).
+
+## Free tools
+
+Browser calculators at [fluxrbot.com/tools](https://fluxrbot.com/tools/?utm_source=github&utm_medium=readme). No account, nothing to install.
+
+- [Kelly calculator](https://fluxrbot.com/tools/kelly-calculator/?utm_source=github&utm_medium=readme): position size from your probability and the price, with half and quarter Kelly
+- [Odds converter](https://fluxrbot.com/tools/odds-converter/?utm_source=github&utm_medium=readme): probability, American, decimal, fractional odds and contract price in cents
+- [Payout calculator](https://fluxrbot.com/tools/payout-calculator/?utm_source=github&utm_medium=readme): payout, return and break-even with Kalshi's fee formula applied
+- [Arbitrage checker](https://fluxrbot.com/tools/arbitrage-checker/?utm_source=github&utm_medium=readme): whether a Polymarket vs Kalshi price gap survives fees
+- [Live radar](https://fluxrbot.com/tools/live-radar/?utm_source=github&utm_medium=readme): biggest movers, highest volume and near-resolved contracts, rebuilt hourly
+- [Conditional chain probability](https://fluxrbot.com/tools/conditional-chain-probability/?utm_source=github&utm_medium=readme): joint probability and fair price for a multi-step event
+- [Crosstab to topline](https://fluxrbot.com/tools/crosstab-to-topline-calculator/?utm_source=github&utm_medium=readme): turnout-weighted margin and win-probability range from subgroup polls
+
+Details and how each maps to the engine: [docs/free-tools.md](docs/free-tools.md).
+
+## Changelog
+
+[CHANGELOG.md](CHANGELOG.md) lists every published app version and the engine changes behind it. The same text is on the site at [fluxrbot.com/changelog](https://fluxrbot.com/changelog/?utm_source=github&utm_medium=readme), and each app version is a [GitHub release](https://github.com/BasinTradesman/fluxrbot/releases) with the installer attached.
+
+## Star the repo
+
+If you want the desk's changelog and new tools first, star the repo. Releases and doc changes land here before they are announced anywhere else.
+
+## Community
+
+- [Discussions](https://github.com/BasinTradesman/fluxrbot/discussions): questions about a refusal, a number that looks wrong, a source you think we should read
+- X: [@fluxrbot](https://x.com/fluxrbot)
+- TikTok: [@fluxr.news](https://www.tiktok.com/@fluxr.news)
+- Email: [hello@fluxrbot.com](mailto:hello@fluxrbot.com)
+
+## License
+
+Documentation in this repository is licensed [CC BY 4.0](LICENSE). The application itself is proprietary.
 
 ---
 
-## Getting it
-
-Installers are attached to [**GitHub Releases**](https://github.com/BasinTradesman/fluxrbot/releases). The app asks for a product key on first launch; keys and the trial are at [fluxrbot.com](https://fluxrbot.com/?utm_source=github&utm_medium=readme&utm_campaign=getting).
-
-Release notes for every version: [CHANGELOG.md](CHANGELOG.md).
-
----
-
-## Documentation
-
-- [What the engine refuses on its own](docs/risk.md) — the eight gates and two breakers
-- [Refusal reasons](docs/refusal-reasons.md) — every code the journal can show you
-- [Data sources](docs/sources.md) — what it reads and how fast
-- [Engine truth (JSON)](docs/engine-truth.json) — the numbers above, machine-readable, regenerated every six hours
-
-Full documentation lives on the site — [**fluxrbot.com/docs**](https://fluxrbot.com/docs/?utm_source=github&utm_medium=readme).
-
----
-
-*FluxrBot is a research tool for prediction markets. Nothing here is financial advice, and no part of it promises a return.*
+*FluxrBot is software, not investment advice. Trading event contracts involves risk of loss. Results shown are from a paper account and are simulated. FluxrBot is not affiliated with Polymarket or Kalshi.*
