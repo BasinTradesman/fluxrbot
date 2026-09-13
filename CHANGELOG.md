@@ -6,6 +6,13 @@ The engine updates itself on the server; from 1.0.4 the app updates itself too (
 Also published at [fluxrbot.com/changelog](https://fluxrbot.com/changelog/?utm_source=github&utm_medium=changelog).
 Product: [fluxrbot.com](https://fluxrbot.com/?utm_source=github&utm_medium=changelog) · Have a key? [activate and download](https://app.fluxrbot.info)
 
+## 1.0.4 — 2026-09-13
+
+- Over-the-air updates: builds are signed on our server, the app verifies the signature and installs updates itself — a checkbox at activation (on by default) and in Settings → Updates controls it; with it off you get a banner and an Update now button that installs from inside the app
+- Email on every version: when a version is published and, if it installed on its own, when it did
+- Heartbeat reports the auto-update choice and machine name so the email can say what will happen on your machine
+- This version has to be installed by hand once — 1.0.3 and older cannot update themselves
+
 ## Engine — 2026-09-13
 
 - Measured answer to the main question: on 2,847 settled outcomes the model's Brier score is 0.145 vs 0.145 for the market price — it does not beat the price. This is now published as machine-readable engine truth (/api/truth) and drives every number on the site
