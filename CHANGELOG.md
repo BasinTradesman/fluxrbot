@@ -6,6 +6,12 @@ The engine updates itself on the server; from 1.0.4 the app updates itself too (
 Also published at [fluxrbot.com/changelog](https://fluxrbot.com/changelog/?utm_source=github&utm_medium=changelog).
 Product: [fluxrbot.com](https://fluxrbot.com/?utm_source=github&utm_medium=changelog) · Have a key? [activate and download](https://app.fluxrbot.info)
 
+## 1.0.5 — 2026-09-13
+
+- Check screen: paste a Kalshi or Polymarket link (or a Kalshi ticker) before you trade — live order book on $50 each side, taker vs maker fee, breakeven, base rates from our own settled outcomes, linked news with the model's read, engine decisions on the contract, price moves, the same contract on the other venue, resolution-rule flags and plain warnings. No recommendation: the model does not beat the price, and the screen says so
+- Watchlist screen: the contracts where your money is — price, 24h move, stories in the last day, latest model verdict marked with or against your side; add from Check or by link
+- First version delivered over the air: 1.0.4 installs it by itself when automatic updates are on, or by the Update now button
+
 ## 1.0.4 — 2026-09-13
 
 - Over-the-air updates: builds are signed on our server, the app verifies the signature and installs updates itself — a checkbox at activation (on by default) and in Settings → Updates controls it; with it off you get a banner and an Update now button that installs from inside the app
