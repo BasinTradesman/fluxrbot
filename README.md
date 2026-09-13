@@ -1,181 +1,134 @@
 # FluxrBot
 
-**A prediction-market research bot that shows its work — including every trade it refused to make.**
+**A prediction-market research bot that shows its work — including every trade it refused to make, and the measurement that its own model does not beat the market price.**
 
-### → [**fluxrbot.com**](https://fluxrbot.com)
+[![settled outcomes](https://img.shields.io/endpoint?url=https%3A%2F%2Ffluxrbot.com%2Fapi%2Fbadge%3Fkind%3Doutcomes)](https://fluxrbot.com/api/truth)
+[![model vs price](https://img.shields.io/endpoint?url=https%3A%2F%2Ffluxrbot.com%2Fapi%2Fbadge%3Fkind%3Dmodel)](https://fluxrbot.com/api/truth)
+[![paper trades](https://img.shields.io/endpoint?url=https%3A%2F%2Ffluxrbot.com%2Fapi%2Fbadge%3Fkind%3Dpaper)](https://fluxrbot.com/api/truth)
 
-[How it works](https://fluxrbot.com/#how) ·
-[Strategies](https://fluxrbot.com/strategies/) ·
-[What the engine refuses](https://fluxrbot.com/risk/) ·
-[Getting started](https://fluxrbot.com/docs/) ·
-[Free tools](https://fluxrbot.com/tools/) ·
-[Live radar](https://fluxrbot.com/tools/live-radar/) ·
-[Glossary](https://fluxrbot.com/glossary/) ·
-[Blog](https://fluxrbot.com/blog/) ·
-[Changelog](https://fluxrbot.com/changelog/)
+### → [**fluxrbot.com**](https://fluxrbot.com/?utm_source=github&utm_medium=readme&utm_campaign=top)
+
+[How it works](https://fluxrbot.com/?utm_source=github&utm_medium=readme#how) ·
+[Strategies](https://fluxrbot.com/strategies/?utm_source=github&utm_medium=readme) ·
+[What the engine refuses](https://fluxrbot.com/risk/?utm_source=github&utm_medium=readme) ·
+[Getting started](https://fluxrbot.com/docs/?utm_source=github&utm_medium=readme) ·
+[Free tools](https://fluxrbot.com/tools/?utm_source=github&utm_medium=readme) ·
+[Blog](https://fluxrbot.com/blog/?utm_source=github&utm_medium=readme) ·
+[Changelog](CHANGELOG.md) ·
+[**Releases ↓**](https://github.com/BasinTradesman/fluxrbot/releases)
 
 *Already have a product key?* → [activate and download](https://app.fluxrbot.info)
 
 ---
 
-FluxrBot reads breaking news, asks a language model how it moves a specific
-prediction-market contract, and compares that answer against the price the
-order book is already showing. When the two disagree by enough to survive the
-spread and the fees, that is a signal.
+## Why this exists
 
-Most of the time they do not disagree, and the bot says so. Out of roughly
-38,000 decisions recorded so far, **about fifty became trades.** The rest are
-written down with the reason they were rejected. That ratio is the product, not an
-embarrassment: a bot that finds an opportunity every hour is not finding
-opportunities, it is finding noise.
+Every prediction-market bot on GitHub and Telegram sells a win rate. In 2026 the independent numbers are brutal: ~70% of Polymarket addresses lose money, 0.04% of addresses take 70% of the profit, and the best language models score *at* the market price on settled outcomes, not above it (Prophet Arena, AIA Forecaster, PolyBench, Prediction Arena — all 2025–2026).
 
-This repository holds the public documentation, the changelog and the release
-notes. The trading engine itself is not open source.
+We measured the same thing on our own pipeline — and got the same answer. So FluxrBot is not a signal machine. It is the tool you open **before** you trade:
+
+- **Check** a contract (paste a Kalshi or Polymarket link): live order book on $50 each side, taker vs maker fee, breakeven probability, how contracts at this price and horizon actually resolved in our 7,000+ settled outcomes, what news touched it and what the model read into it, and which resolution-rule phrases start disputes.
+- **Watch** the contracts where your money is: when a story lands that the model reads as moving the outcome, you get it in Telegram — marked *with* or *against* your position.
+- **Read the refusal journal**: every decision the engine made, with the reason, next to the few it turned into paper trades.
+
+Everything is measured. Where a number is not yet measurable, it is absent rather than approximated.
 
 ---
 
-## What it actually does
+## Measured, not claimed
 
-**Reads.** 37 news feeds plus 15 Bluesky accounts on a live streaming
-connection. Reuters and AP closed their public RSS; on Bluesky they publish
-first-hand, and a post reaches our database in **16–22 seconds** against a
-12-minute median for polled feeds.
+<!-- measured:start -->
+_Updated 2026-09-13 from the live database. Same numbers: [`/api/truth`](https://fluxrbot.com/api/truth) · [strategies page](https://fluxrbot.com/strategies/?utm_source=github&utm_medium=readme)._
 
-**Matches.** Every event is matched against ~1,300 live contracts on Kalshi and
-Polymarket by entity and wording. The entity dictionary extends itself: a
-nightly job asks the model to name the entities in contracts our manual
-dictionary missed.
+**Mode:** paper only. No live orders. Trading since 2026-07-31.
 
-**Judges.** Contracts that survive matching go to the model with the headline,
-the article body, and the current book price. The model answers three things:
-does this news bear on the outcome, which way, and how sure are you.
-
-**Argues with itself.** Every trade candidate gets a second question: *what is
-the strongest objection to this bet?* Not "score it again" — rephrasing the
-same reasoning returns the same answer. A strong objection cancels the trade.
-A weak one is recorded and shown anyway. An argument you only see when it wins
-cannot be checked, and a journal you cannot check is not a journal.
-
-**Checks twice.** A second, independent estimate sees only the news, the
-contract and the market price — not our probability and not our reasoning. If
-the two disagree on direction, there is no signal. If they agree, we take the
-**more cautious** of the two, not the average: both came from one model on one
-set of facts, and averaging would narrow the spread more than reality allows.
-
-**Prices against the real book.** Entry is computed by walking the actual order
-book, not from the last traded price. When the spread eats the edge, the engine
-places a limit order instead of refusing — measured fill rate 71%, average
-spread crossed 4.1¢ against 15.0¢ for market orders.
-
-**Refuses.** Eight risk gates run in order of weight, so the journal records
-the main reason rather than the first one hit: account halted, position cap,
-cash, total exposure, daily turnover, one position per mutually-exclusive
-group, category concentration, and no more than two positions sharing an
-entity. Two circuit breakers: a daily loss stop that clears itself at midnight,
-and a drawdown halt that only a human can clear — because drawdown means
-*something is wrong with the strategy*, and time does not answer that.
-
-**Reports.** Every refusal is logged next to every trade, with a reason code
-translated into four languages. Losing trades that settle get an automated
-post-mortem naming the cause from a closed list, so repeated mistakes group
-instead of scattering.
-
----
-
-## Strategies
-
-Five, each on its **own** separate paper account. Mixing two strategies into
-one account means never being able to tell them apart afterwards.
-
-| Strategy | What it looks for |
+| What | Count |
 |---|---|
-| `news-llm` | News moves the probability; the market has not moved yet |
-| `group-arb` | Every outcome of one event trades for less than the dollar it must pay |
-| `cross-venue-arb` | Same question, two venues, two prices |
-| `weather` | A three-model forecast ensemble against the price of a temperature contract |
-| `no-bias` | Fades the crowd: our own settled history shows markets systematically overprice YES, so it buys NO where that overpricing is measured |
+| News events read | 146,425 |
+| Event → contract links | 289,093 |
+| Model verdicts | 63,699 |
+| Contracts with a settled outcome | 7,413 |
+| Price points recorded | 636,878 |
+| Paper trades / refusals | 76 / 338,677 |
 
-Each strategy's page on the site states its assumption and, more importantly,
-**how it loses.** `group-arb` in particular required a lesson: "mutually
-exclusive" does not mean "exhaustive". Its first run found an 84¢ "arbitrage"
-across eight outcomes of *which state becomes the 51st* — no arbitrage exists
-there, because no new state may appear at all.
+**Does the model beat the price?** On **2,847 settled outcomes** the model's Brier score is **0.145** against **0.145** for the market price. Direction hit rate 58% vs 79% for the price. **It does not beat the price.** That is the honest answer, and it matches every independent 2025–2026 study we could find (Prophet Arena, AIA Forecaster, PolyBench, Prediction Arena).
+
+**Strategies, each on its own $100 paper account:**
+
+| Strategy | | Trades | Closed | Direction right | Result |
+|---|---|---|---|---|---|
+| `news-llm` | on | 21 | 18 | 50% | +$3.18 |
+| `group-arb` | on | 37 | 33 | 42% | +$0.49 |
+| `cross-venue-arb` | on | 0 | 0 | — | +$0 |
+| `weather` | on | 12 | 12 | 42% | +$56.49 |
+| `no-bias` | off | 6 | 6 | 17% | $-27.93 |
+
+Total closed 69, net +$32.23. Weather's plus is one +$95 trade on a 12-trade sample. `no-bias` was switched off on 2026-09-13 after 1 hit in 6: the overpricing it was built on did not hold out of sample. Neither is an edge; we say so.
+
+**Market calibration, our own data (all categories, price ~24 h before close):**
+
+| Price band | n | Avg price | YES resolved | YES − price |
+|---|---|---|---|---|
+| 0-10¢ | 1132 | 0.8¢ | 0.5% | -0.3pp |
+| 10-25¢ | 105 | 17.6¢ | 18.1% | +0.5pp |
+| 25-40¢ | 114 | 32.7¢ | 30.7% | -2pp |
+| 40-60¢ | 175 | 50.1¢ | 50.3% | +0.2pp |
+| 60-75¢ | 113 | 66.5¢ | 63.7% | -2.8pp |
+| 75-90¢ | 51 | 81.7¢ | 72.5% | -9.2pp |
+| 90-100¢ | 771 | 99.6¢ | 99.6% | 0pp |
+
+Model outages in the last 60 days: 21 day(s) (2026-08-22 → 2026-09-11, gateway balance — now alerted).
+<!-- measured:end -->
+
+---
+
+## What it does
+
+**Reads.** 37 news feeds plus 15 Bluesky accounts on a streaming connection (Reuters and AP publish there first-hand; a post reaches the database in 16–22 seconds against a 12-minute median for polled feeds).
+
+**Matches.** Every event is matched against ~1,300 live contracts on Kalshi and Polymarket by entity and wording. The entity dictionary extends itself nightly.
+
+**Judges.** Contracts that survive matching go to the model with the headline, the article body and the current book price. Three questions: does this bear on the outcome, which way, how sure.
+
+**Argues with itself.** Every trade candidate gets the question *what is the strongest objection to this bet?* A strong objection cancels the trade; a weak one is recorded and shown anyway.
+
+**Prices against the real book.** Entry is computed by walking the actual order book. When the spread eats the edge, the engine posts a limit order instead — measured fill rate 80%, average spread crossed 3.7¢ against 15.5¢ for market orders. Fees are the venues' real 2026 schedules: Kalshi 7% × p × (1−p) taker, Polymarket 4–7% × p × (1−p) by category, makers free.
+
+**Refuses.** Eight risk gates in order of weight, two circuit breakers, one journal for trades and refusals alike.
+
+**Checks, watches, alerts.** The pre-trade check and the watchlist are in the desktop app and in the Telegram bot (`/check <link>`, `/watch <link> [yes|no] [price]`, `/list`).
+
+**Updates itself, if you let it.** From 1.0.4 the app installs signed updates over the air; a checkbox at activation (on by default) controls it, and you get an email either way.
 
 ---
 
 ## What it does not do
 
-Stated plainly, because finding out later is worse.
-
-- **No live trading yet.** Everything runs on paper. This is a deliberate block
-  until the measurement base fills: until we can show the model beats the
-  *book price* — not a coin flip, the book — connecting real money would be
-  guessing with someone's savings.
+- **No live trading.** Everything runs on paper until the engine can show — on settled outcomes, against the *book price* — that it earns after fees. It cannot yet, and this page says so above.
 - **No income promises.** Not on the site, not here, not ever.
-- **No wallet connection.** Kalshi automates through an API key that never
-  leaves your machine. Polymarket requires a wallet private key to mint API
-  credentials, so Polymarket stays signal-only. That makes "no wallet needed"
-  true rather than marketing.
-- **No auto-install.** The app tells you an update exists and downloads the
-  installer; you run it. Software that watches money should not replace itself
-  while you are not looking.
-- **The installer is not certificate-signed.** Windows SmartScreen will warn
-  you. Choose *More info → Run anyway*.
-- **The Telegram bot speaks English only.** The app speaks four languages.
-
----
-
-## How the numbers here are produced
-
-Every figure on this page and on the site is measured, not estimated. Where a
-number is not yet measurable, it is absent rather than approximated.
-
-The one that matters most is still open: **does the model beat the book?** The
-market price *is* the market's probability, so beating a coin flip proves
-nothing. As of this writing, 300+ settled outcomes are in: our probability
-score is essentially tied with the book's (Brier 0.0480 vs 0.0483), and the
-model's confidence finally means something — hit rate climbs from 57% in the
-low-confidence band to 94% in the highest. That crossed the threshold where
-calibration applies: the probability-shift ceiling is now measured nightly
-instead of hand-picked, and fractional Kelly sizing engaged. It is not yet
-enough to declare an edge, and live trading stays blocked until it is.
-
-Three measurement errors were found and fixed while trying to answer it, each
-of which made the engine look worse than it was: comparing against 50% when
-prediction-market prices systematically drift down, letting settlement prices
-count as "market movement", and treating many verdicts on one contract as
-independent observations. One systematic result did survive every correction:
-**YES resolves less often than its price implies, in every price band** — the
-crowd overpays for the event side. The fifth strategy trades exactly that.
+- **No wallet connection.** Kalshi connects through an API key that never leaves your machine. Polymarket needs a wallet private key to mint trading credentials, so Polymarket stays signal-only.
+- **No 5- and 15-minute crypto markets.** 55–62% of that volume is bots with sub-100 ms latency; we do not pretend to compete there.
+- **The installer is not certificate-signed.** Windows SmartScreen warns on first manual install; over-the-air updates are signed with our own key and skip it.
 
 ---
 
 ## Getting it
 
-Start at **[fluxrbot.com](https://fluxrbot.com)** — pricing, what it does, and
-how to request access are all there.
+Installers are attached to [**GitHub Releases**](https://github.com/BasinTradesman/fluxrbot/releases). The app asks for a product key on first launch; keys and the trial are at [fluxrbot.com](https://fluxrbot.com/?utm_source=github&utm_medium=readme&utm_campaign=getting).
 
-If you already hold a product key, the installer is at
-[app.fluxrbot.info](https://app.fluxrbot.info): enter the key and the download
-link appears. The installer is not published here — access to it goes through
-the key.
-
-Release notes for every version: [CHANGELOG.md](CHANGELOG.md) here, or
-[fluxrbot.com/changelog](https://fluxrbot.com/changelog/) on the site.
+Release notes for every version: [CHANGELOG.md](CHANGELOG.md).
 
 ---
 
 ## Documentation
 
-Full documentation lives on the site — [**fluxrbot.com/docs**](https://fluxrbot.com/docs/).
-These pages mirror the parts most worth reading before you decide anything:
-
-- [What the engine refuses on its own](docs/risk.md) — the eight gates and two
-  breakers · [on the site](https://fluxrbot.com/risk/)
+- [What the engine refuses on its own](docs/risk.md) — the eight gates and two breakers
 - [Refusal reasons](docs/refusal-reasons.md) — every code the journal can show you
 - [Data sources](docs/sources.md) — what it reads and how fast
+- [Engine truth (JSON)](docs/engine-truth.json) — the numbers above, machine-readable, regenerated every six hours
+
+Full documentation lives on the site — [**fluxrbot.com/docs**](https://fluxrbot.com/docs/?utm_source=github&utm_medium=readme).
 
 ---
 
-*FluxrBot is a research tool for prediction markets. Nothing here is financial
-advice, and no part of it promises a return.*
+*FluxrBot is a research tool for prediction markets. Nothing here is financial advice, and no part of it promises a return.*

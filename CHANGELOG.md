@@ -1,10 +1,20 @@
 # Changelog
 
 Every published version of the FluxrBot app, plus the engine changes behind it.
-The engine updates itself on the server; app versions are installed by you.
+The engine updates itself on the server; from 1.0.4 the app updates itself too (signed, over the air, optional).
 
-Also published at [fluxrbot.com/changelog](https://fluxrbot.com/changelog/).
-Product and pricing: [fluxrbot.com](https://fluxrbot.com) · Have a key? [activate and download](https://app.fluxrbot.info)
+Also published at [fluxrbot.com/changelog](https://fluxrbot.com/changelog/?utm_source=github&utm_medium=changelog).
+Product: [fluxrbot.com](https://fluxrbot.com/?utm_source=github&utm_medium=changelog) · Have a key? [activate and download](https://app.fluxrbot.info)
+
+## Engine — 2026-09-13
+
+- Measured answer to the main question: on 2,847 settled outcomes the model's Brier score is 0.145 vs 0.145 for the market price — it does not beat the price. This is now published as machine-readable engine truth (/api/truth) and drives every number on the site
+- Pre-trade check: paste a Kalshi or Polymarket link and get the live order book on $50 each side, taker vs maker fee, breakeven, base rates from our own settled outcomes, linked news with verdicts, resolution-rule flags and plain warnings
+- Watchlist: follow the contracts you hold; news the model reads as moving the outcome arrives in Telegram marked with or against your position (/watch, /list, /check in the bot)
+- Polymarket taker fees modelled by category (4–7% × p × (1−p), makers free) — the engine treated Polymarket as fee-free since before the March 2026 change, overstating paper results
+- no-bias strategy switched off: 1 hit in 6, the measured YES-overpricing did not hold out of sample; weather's +56% is one +$95 trade on a 12-trade sample and is reported as such
+- Silent-failure watchdog: the model gateway ran out of balance on 22.08 and nobody noticed for three weeks (zero verdicts, timers green). The engine now alerts the operator within three hours of silence
+- Every app release is now signed on the server, published as a GitHub Release and announced by email to activated users
 
 ## 1.0.3 — 2026-08-12
 
