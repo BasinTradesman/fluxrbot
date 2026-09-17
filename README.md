@@ -68,20 +68,20 @@ Every number in this section is regenerated from the live database every six hou
 [![paper trades](https://img.shields.io/endpoint?url=https%3A%2F%2Ffluxrbot.com%2Fapi%2Fbadge%3Fkind%3Dpaper)](https://fluxrbot.com/api/truth)
 
 <!-- measured:start -->
-_Updated 2026-09-16 from the live database. Same numbers: [`/api/truth`](https://fluxrbot.com/api/truth) · [strategies page](https://fluxrbot.com/strategies/?utm_source=github&utm_medium=readme)._
+_Updated 2026-09-17 from the live database. Same numbers: [`/api/truth`](https://fluxrbot.com/api/truth) · [strategies page](https://fluxrbot.com/strategies/?utm_source=github&utm_medium=readme)._
 
 **Mode:** paper only. No live orders. Trading since 2026-07-31.
 
 | What | Count |
 |---|---|
-| News events read | 161,590 |
-| Event → contract links | 324,243 |
-| Model verdicts | 87,290 |
-| Contracts with a settled outcome | 8,208 |
-| Price points recorded | 699,408 |
-| Paper trades / refusals | 76 / 376,329 |
+| News events read | 162,436 |
+| Event → contract links | 326,402 |
+| Model verdicts | 88,547 |
+| Contracts with a settled outcome | 8,237 |
+| Price points recorded | 703,462 |
+| Paper trades / refusals | 76 / 379,915 |
 
-**Does the model beat the price?** On **2,950 settled outcomes** the model's Brier score is **0.145** against **0.145** for the market price. Direction hit rate 58% vs 79% for the price. **It does not beat the price.** That is the honest answer, and it matches every independent 2025–2026 study we could find (Prophet Arena, AIA Forecaster, PolyBench, Prediction Arena).
+**Does the model beat the price?** On **3,440 settled outcomes** the model's Brier score is **0.141** against **0.141** for the market price. Direction hit rate 61% vs 79% for the price. **It does not beat the price.** That is the honest answer, and it matches every independent 2025–2026 study we could find (Prophet Arena, AIA Forecaster, PolyBench, Prediction Arena).
 
 **Strategies, each on its own $100 paper account:**
 
@@ -99,13 +99,13 @@ Total closed 73, net +$33.6. Weather's plus is one +$95 trade on a 12-trade samp
 
 | Price band | n | Avg price | YES resolved | YES − price |
 |---|---|---|---|---|
-| 0-10¢ | 1215 | 0.8¢ | 0.5% | -0.3pp |
-| 10-25¢ | 113 | 17.7¢ | 16.8% | -0.9pp |
+| 0-10¢ | 1221 | 0.8¢ | 0.5% | -0.3pp |
+| 10-25¢ | 115 | 17.7¢ | 16.5% | -1.2pp |
 | 25-40¢ | 118 | 32.6¢ | 30.5% | -2.1pp |
-| 40-60¢ | 214 | 50¢ | 49.5% | -0.5pp |
-| 60-75¢ | 121 | 66.6¢ | 65.3% | -1.3pp |
+| 40-60¢ | 215 | 49.9¢ | 49.8% | -0.1pp |
+| 60-75¢ | 123 | 66.7¢ | 65.9% | -0.8pp |
 | 75-90¢ | 57 | 81.9¢ | 73.7% | -8.2pp |
-| 90-100¢ | 843 | 99.5¢ | 99.5% | 0pp |
+| 90-100¢ | 845 | 99.5¢ | 99.5% | 0pp |
 
 Model outages in the last 60 days: 21 day(s) (2026-08-22 → 2026-09-11, gateway balance — now alerted).
 <!-- measured:end -->
