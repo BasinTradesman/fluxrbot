@@ -74,12 +74,12 @@ _Updated 2026-09-18 from the live database. Same numbers: [`/api/truth`](https:/
 
 | What | Count |
 |---|---|
-| News events read | 166,727 |
-| Event → contract links | 336,566 |
+| News events read | 167,720 |
+| Event → contract links | 338,754 |
 | Model verdicts | 91,762 |
-| Contracts with a settled outcome | 8,388 |
-| Price points recorded | 718,886 |
-| Paper trades / refusals | 76 / 391,768 |
+| Contracts with a settled outcome | 8,449 |
+| Price points recorded | 722,359 |
+| Paper trades / refusals | 78 / 393,994 |
 
 **Does the model beat the price?** On **3,457 settled outcomes** the model's Brier score is **0.141** against **0.141** for the market price. Direction hit rate 61% vs 79% for the price. **It does not beat the price.** That is the honest answer, and it matches every independent 2025–2026 study we could find (Prophet Arena, AIA Forecaster, PolyBench, Prediction Arena).
 
@@ -89,7 +89,7 @@ _Updated 2026-09-18 from the live database. Same numbers: [`/api/truth`](https:/
 |---|---|---|---|---|---|
 | `news-llm` | on | 21 | 18 | 50% | +$3.18 |
 | `group-arb` | on | 37 | 37 | 54% | $-0.34 |
-| `cross-venue-arb` | on | 0 | 0 | — | +$0 |
+| `cross-venue-arb` | on | 2 | 0 | — | +$0 |
 | `weather` | on | 12 | 12 | 42% | +$56.49 |
 | `no-bias` | off | 6 | 6 | 17% | $-27.93 |
 
@@ -99,13 +99,13 @@ Total closed 73, net +$31.4. Weather's plus is one +$95 trade on a 12-trade samp
 
 | Price band | n | Avg price | YES resolved | YES − price |
 |---|---|---|---|---|
-| 0-10¢ | 1233 | 0.8¢ | 0.5% | -0.3pp |
+| 0-10¢ | 1239 | 0.8¢ | 0.5% | -0.3pp |
 | 10-25¢ | 116 | 17.7¢ | 17.2% | -0.5pp |
-| 25-40¢ | 118 | 32.6¢ | 30.5% | -2.1pp |
-| 40-60¢ | 219 | 50¢ | 49.8% | -0.2pp |
+| 25-40¢ | 120 | 32.6¢ | 30.8% | -1.8pp |
+| 40-60¢ | 223 | 50¢ | 50.7% | +0.7pp |
 | 60-75¢ | 124 | 66.6¢ | 66.1% | -0.5pp |
 | 75-90¢ | 62 | 82.1¢ | 74.2% | -7.9pp |
-| 90-100¢ | 863 | 99.5¢ | 99.5% | 0pp |
+| 90-100¢ | 867 | 99.5¢ | 99.5% | 0pp |
 
 Model outages in the last 60 days: 21 day(s) (2026-08-22 → 2026-09-11, gateway balance — now alerted).
 <!-- measured:end -->
