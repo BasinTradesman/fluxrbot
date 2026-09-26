@@ -74,12 +74,12 @@ _Updated 2026-09-26 from the live database. Same numbers: [`/api/truth`](https:/
 
 | What | Count |
 |---|---|
-| News events read | 201,069 |
-| Event → contract links | 416,288 |
-| Model verdicts | 132,680 |
-| Contracts with a settled outcome | 10,115 |
-| Price points recorded | 868,694 |
-| Paper trades / refusals | 79 / 476,308 |
+| News events read | 201,932 |
+| Event → contract links | 417,769 |
+| Model verdicts | 133,798 |
+| Contracts with a settled outcome | 10,136 |
+| Price points recorded | 874,398 |
+| Paper trades / refusals | 79 / 477,845 |
 
 **Does the model beat the price?** On **4,255 settled outcomes** the model's Brier score is **0.146** against **0.146** for the market price. Direction hit rate 61% vs 78% for the price. **It does not beat the price.** That is the honest answer, and it matches every independent 2025–2026 study we could find (Prophet Arena, AIA Forecaster, PolyBench, Prediction Arena).
 
@@ -99,13 +99,13 @@ Total closed 74, net +$22.14. Weather's plus is one +$95 trade on a 12-trade sam
 
 | Price band | n | Avg price | YES resolved | YES − price |
 |---|---|---|---|---|
-| 0-10¢ | 1440 | 0.8¢ | 0.5% | -0.3pp |
-| 10-25¢ | 138 | 17.5¢ | 15.9% | -1.6pp |
+| 0-10¢ | 1448 | 0.8¢ | 0.5% | -0.3pp |
+| 10-25¢ | 139 | 17.5¢ | 15.8% | -1.7pp |
 | 25-40¢ | 150 | 32.7¢ | 32.7% | 0pp |
-| 40-60¢ | 281 | 49.9¢ | 49.1% | -0.8pp |
+| 40-60¢ | 282 | 49.9¢ | 48.9% | -1pp |
 | 60-75¢ | 137 | 66.7¢ | 67.9% | +1.2pp |
-| 75-90¢ | 72 | 81.9¢ | 77.8% | -4.1pp |
-| 90-100¢ | 1038 | 99.6¢ | 99.5% | -0.1pp |
+| 75-90¢ | 73 | 81.9¢ | 78.1% | -3.8pp |
+| 90-100¢ | 1042 | 99.6¢ | 99.5% | -0.1pp |
 
 Model outages in the last 60 days: 22 day(s) (2026-08-22 → 2026-09-18, gateway balance — now alerted).
 <!-- measured:end -->
