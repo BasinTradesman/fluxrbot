@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-09-29T22:20:00.543Z",
+  "generatedAt": "2026-09-30T11:55:23.970Z",
   "mode": "paper",
   "liveTrading": false,
   "counts": {
-    "events": 211750,
-    "links": 442359,
-    "verdicts": 151062,
-    "settledOutcomes": 10896,
-    "activeMarkets": 1253,
-    "pricePoints": 927710,
+    "events": 212029,
+    "links": 443149,
+    "verdicts": 151661,
+    "settledOutcomes": 10915,
+    "activeMarkets": 1255,
+    "pricePoints": 928863,
     "trades": 79,
-    "skips": 505259,
+    "skips": 506086,
     "closedTrades": 74,
     "tradingSince": "2026-07-31T23:33:28.861Z",
     "devices": 2,
@@ -37,7 +37,7 @@
       "pnlUsd": 3.18,
       "startBalance": 100,
       "balance": 103.18,
-      "lastAt": "2026-09-29T22:19:56.501Z",
+      "lastAt": "2026-09-30T00:14:15.789Z",
       "halted": null
     },
     {
@@ -50,7 +50,7 @@
       "pnlUsd": -0.34,
       "startBalance": 100,
       "balance": 99.66,
-      "lastAt": "2026-09-29T21:31:54.098Z",
+      "lastAt": "2026-09-29T23:46:48.138Z",
       "halted": null
     },
     {
@@ -63,7 +63,7 @@
       "pnlUsd": 0,
       "startBalance": 100,
       "balance": 100,
-      "lastAt": "2026-09-29T22:01:45.447Z",
+      "lastAt": "2026-09-30T00:02:01.558Z",
       "halted": null
     },
     {
@@ -76,7 +76,7 @@
       "pnlUsd": 47.23,
       "startBalance": 100,
       "balance": 147.23,
-      "lastAt": "2026-09-28T23:46:39.442Z",
+      "lastAt": "2026-09-29T23:46:48.405Z",
       "halted": null
     },
     {
@@ -127,35 +127,35 @@
   "topRefusals7d": [
     {
       "reason": "модель: событие не влияет на исход",
-      "n": 33699
+      "n": 32157
     },
     {
       "reason": "книга у края (0¢)",
-      "n": 7513
+      "n": 6485
     },
     {
       "reason": "направление новости неясно",
-      "n": 3610
+      "n": 3379
     },
     {
       "reason": "книга у края (1¢)",
-      "n": 2536
+      "n": 2374
     },
     {
       "reason": "книга у края (2¢)",
-      "n": 1768
-    },
-    {
-      "reason": "книга у края (100¢)",
-      "n": 1683
+      "n": 1675
     },
     {
       "reason": "книга у края (3¢)",
-      "n": 1632
+      "n": 1618
     },
     {
-      "reason": "edge -1.1¢ ниже порога 5¢",
-      "n": 924
+      "reason": "книга у края (100¢)",
+      "n": 1579
+    },
+    {
+      "reason": "edge -1.0¢ ниже порога 5¢",
+      "n": 853
     }
   ],
   "marketCalibration": [
@@ -163,7 +163,7 @@
       "category": "all",
       "hoursBefore": 6,
       "band": "0-10",
-      "n": 4325,
+      "n": 4328,
       "avgPrice": 0.4,
       "yesPct": 0.4,
       "yesMinusPrice": 0
@@ -190,34 +190,34 @@
       "category": "all",
       "hoursBefore": 6,
       "band": "40-60",
-      "n": 1227,
+      "n": 1228,
       "avgPrice": 49.7,
-      "yesPct": 50.5,
-      "yesMinusPrice": 0.8
+      "yesPct": 50.6,
+      "yesMinusPrice": 0.9
     },
     {
       "category": "all",
       "hoursBefore": 6,
       "band": "60-75",
-      "n": 385,
+      "n": 386,
       "avgPrice": 66.3,
-      "yesPct": 69.1,
-      "yesMinusPrice": 2.8
+      "yesPct": 68.9,
+      "yesMinusPrice": 2.6
     },
     {
       "category": "all",
       "hoursBefore": 6,
       "band": "75-90",
-      "n": 181,
+      "n": 182,
       "avgPrice": 82.3,
-      "yesPct": 85.6,
-      "yesMinusPrice": 3.3
+      "yesPct": 85.2,
+      "yesMinusPrice": 2.9
     },
     {
       "category": "all",
       "hoursBefore": 6,
       "band": "90-100",
-      "n": 3047,
+      "n": 3059,
       "avgPrice": 99.7,
       "yesPct": 99.6,
       "yesMinusPrice": -0.1
@@ -226,7 +226,7 @@
       "category": "all",
       "hoursBefore": 24,
       "band": "0-10",
-      "n": 1500,
+      "n": 1502,
       "avgPrice": 0.8,
       "yesPct": 0.5,
       "yesMinusPrice": -0.3
@@ -271,16 +271,16 @@
       "category": "all",
       "hoursBefore": 24,
       "band": "75-90",
-      "n": 80,
+      "n": 81,
       "avgPrice": 81.9,
-      "yesPct": 77.5,
-      "yesMinusPrice": -4.4
+      "yesPct": 77.8,
+      "yesMinusPrice": -4.1
     },
     {
       "category": "all",
       "hoursBefore": 24,
       "band": "90-100",
-      "n": 1099,
+      "n": 1104,
       "avgPrice": 99.6,
       "yesPct": 99.5,
       "yesMinusPrice": -0.1
@@ -289,7 +289,7 @@
       "category": "all",
       "hoursBefore": 48,
       "band": "0-10",
-      "n": 1332,
+      "n": 1334,
       "avgPrice": 0.7,
       "yesPct": 0.6,
       "yesMinusPrice": -0.1
@@ -316,10 +316,10 @@
       "category": "all",
       "hoursBefore": 48,
       "band": "40-60",
-      "n": 206,
+      "n": 207,
       "avgPrice": 49.9,
-      "yesPct": 51.5,
-      "yesMinusPrice": 1.6
+      "yesPct": 51.7,
+      "yesMinusPrice": 1.8
     },
     {
       "category": "all",
@@ -334,16 +334,16 @@
       "category": "all",
       "hoursBefore": 48,
       "band": "75-90",
-      "n": 49,
+      "n": 50,
       "avgPrice": 82.5,
-      "yesPct": 83.7,
-      "yesMinusPrice": 1.2
+      "yesPct": 84,
+      "yesMinusPrice": 1.5
     },
     {
       "category": "all",
       "hoursBefore": 48,
       "band": "90-100",
-      "n": 988,
+      "n": 992,
       "avgPrice": 99.7,
       "yesPct": 99.7,
       "yesMinusPrice": 0
@@ -370,19 +370,19 @@
       "category": "all",
       "hoursBefore": 168,
       "band": "25-40",
-      "n": 195,
+      "n": 197,
       "avgPrice": 34.9,
-      "yesPct": 34.4,
-      "yesMinusPrice": -0.5
+      "yesPct": 34.5,
+      "yesMinusPrice": -0.4
     },
     {
       "category": "all",
       "hoursBefore": 168,
       "band": "40-60",
-      "n": 501,
+      "n": 502,
       "avgPrice": 48.9,
-      "yesPct": 47.5,
-      "yesMinusPrice": -1.4
+      "yesPct": 47.6,
+      "yesMinusPrice": -1.3
     },
     {
       "category": "all",
@@ -406,7 +406,7 @@
       "category": "all",
       "hoursBefore": 168,
       "band": "90-100",
-      "n": 240,
+      "n": 242,
       "avgPrice": 99.3,
       "yesPct": 98.8,
       "yesMinusPrice": -0.5
@@ -694,10 +694,10 @@
       "category": "politics",
       "hoursBefore": 6,
       "band": "90-100",
-      "n": 171,
+      "n": 174,
       "avgPrice": 99.5,
-      "yesPct": 98.2,
-      "yesMinusPrice": -1.3
+      "yesPct": 98.3,
+      "yesMinusPrice": -1.2
     },
     {
       "category": "politics",
@@ -730,10 +730,10 @@
       "category": "politics",
       "hoursBefore": 24,
       "band": "90-100",
-      "n": 101,
+      "n": 104,
       "avgPrice": 99.4,
-      "yesPct": 97,
-      "yesMinusPrice": -2.4
+      "yesPct": 97.1,
+      "yesMinusPrice": -2.3
     },
     {
       "category": "politics",
@@ -765,11 +765,20 @@
     {
       "category": "politics",
       "hoursBefore": 48,
+      "band": "40-60",
+      "n": 15,
+      "avgPrice": 49.2,
+      "yesPct": 73.3,
+      "yesMinusPrice": 24.1
+    },
+    {
+      "category": "politics",
+      "hoursBefore": 48,
       "band": "90-100",
-      "n": 100,
+      "n": 102,
       "avgPrice": 99.4,
-      "yesPct": 97,
-      "yesMinusPrice": -2.4
+      "yesPct": 97.1,
+      "yesMinusPrice": -2.3
     },
     {
       "category": "politics",
@@ -784,10 +793,10 @@
       "category": "politics",
       "hoursBefore": 168,
       "band": "90-100",
-      "n": 81,
+      "n": 83,
       "avgPrice": 99.4,
-      "yesPct": 96.3,
-      "yesMinusPrice": -3.1
+      "yesPct": 96.4,
+      "yesMinusPrice": -3
     },
     {
       "category": "sports",
@@ -820,28 +829,28 @@
       "category": "sports",
       "hoursBefore": 6,
       "band": "40-60",
-      "n": 281,
+      "n": 282,
       "avgPrice": 49.9,
-      "yesPct": 51.6,
-      "yesMinusPrice": 1.7
+      "yesPct": 51.8,
+      "yesMinusPrice": 1.9
     },
     {
       "category": "sports",
       "hoursBefore": 6,
       "band": "60-75",
-      "n": 134,
-      "avgPrice": 66.3,
-      "yesPct": 68.7,
-      "yesMinusPrice": 2.4
+      "n": 135,
+      "avgPrice": 66.4,
+      "yesPct": 68.1,
+      "yesMinusPrice": 1.7
     },
     {
       "category": "sports",
       "hoursBefore": 6,
       "band": "75-90",
-      "n": 28,
-      "avgPrice": 80.8,
-      "yesPct": 82.1,
-      "yesMinusPrice": 1.3
+      "n": 29,
+      "avgPrice": 80.7,
+      "yesPct": 79.3,
+      "yesMinusPrice": -1.4
     },
     {
       "category": "sports",
@@ -937,7 +946,7 @@
       "category": "unknown",
       "hoursBefore": 6,
       "band": "0-10",
-      "n": 2761,
+      "n": 2764,
       "avgPrice": 0.3,
       "yesPct": 0.1,
       "yesMinusPrice": -0.2
@@ -991,7 +1000,7 @@
       "category": "unknown",
       "hoursBefore": 6,
       "band": "90-100",
-      "n": 2161,
+      "n": 2170,
       "avgPrice": 99.8,
       "yesPct": 99.7,
       "yesMinusPrice": -0.1
@@ -1000,7 +1009,7 @@
       "category": "unknown",
       "hoursBefore": 24,
       "band": "0-10",
-      "n": 1011,
+      "n": 1013,
       "avgPrice": 0.5,
       "yesPct": 0.2,
       "yesMinusPrice": -0.3
@@ -1045,16 +1054,16 @@
       "category": "unknown",
       "hoursBefore": 24,
       "band": "75-90",
-      "n": 36,
+      "n": 37,
       "avgPrice": 82,
-      "yesPct": 75,
-      "yesMinusPrice": -7
+      "yesPct": 75.7,
+      "yesMinusPrice": -6.3
     },
     {
       "category": "unknown",
       "hoursBefore": 24,
       "band": "90-100",
-      "n": 741,
+      "n": 743,
       "avgPrice": 99.8,
       "yesPct": 99.9,
       "yesMinusPrice": 0.1
@@ -1063,7 +1072,7 @@
       "category": "unknown",
       "hoursBefore": 48,
       "band": "0-10",
-      "n": 930,
+      "n": 932,
       "avgPrice": 0.4,
       "yesPct": 0.3,
       "yesMinusPrice": -0.1
@@ -1108,16 +1117,16 @@
       "category": "unknown",
       "hoursBefore": 48,
       "band": "75-90",
-      "n": 23,
+      "n": 24,
       "avgPrice": 82.5,
-      "yesPct": 78.3,
-      "yesMinusPrice": -4.2
+      "yesPct": 79.2,
+      "yesMinusPrice": -3.3
     },
     {
       "category": "unknown",
       "hoursBefore": 48,
       "band": "90-100",
-      "n": 719,
+      "n": 721,
       "avgPrice": 99.9,
       "yesPct": 100,
       "yesMinusPrice": 0.1
@@ -1144,19 +1153,19 @@
       "category": "unknown",
       "hoursBefore": 168,
       "band": "25-40",
-      "n": 184,
+      "n": 185,
       "avgPrice": 35,
-      "yesPct": 34.2,
-      "yesMinusPrice": -0.8
+      "yesPct": 34.1,
+      "yesMinusPrice": -0.9
     },
     {
       "category": "unknown",
       "hoursBefore": 168,
       "band": "40-60",
-      "n": 485,
-      "avgPrice": 49,
-      "yesPct": 47,
-      "yesMinusPrice": -2
+      "n": 486,
+      "avgPrice": 48.9,
+      "yesPct": 47.1,
+      "yesMinusPrice": -1.8
     },
     {
       "category": "unknown",
@@ -1261,9 +1270,9 @@
   "claims": {
     "allowed": [
       "Paper mode only. 79 paper trades, 74 closed, since 2026-07-31.",
-      "505,259 logged refusals with reasons — every decision written down.",
+      "506,086 logged refusals with reasons — every decision written down.",
       "On 4520 settled outcomes the model's Brier score is 0.146 vs 0.146 for the market price — the model does not beat the price.",
-      "10,896 settled outcomes and 927,710 price points measured — the market calibration table is ours, not quoted.",
+      "10,915 settled outcomes and 928,863 price points measured — the market calibration table is ours, not quoted.",
       "No wallet private key is ever requested; Polymarket stays signal-only, Kalshi connects with an API key that stays on your machine.",
       "Model was silent 22 day(s) in the last 60 (gateway outage) — now watched by an alert."
     ],
