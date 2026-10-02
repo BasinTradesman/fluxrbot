@@ -68,20 +68,20 @@ Every number in this section is regenerated from the live database every six hou
 [![paper trades](https://img.shields.io/endpoint?url=https%3A%2F%2Ffluxrbot.com%2Fapi%2Fbadge%3Fkind%3Dpaper)](https://fluxrbot.com/api/truth)
 
 <!-- measured:start -->
-_Updated 2026-10-01 from the live database. Same numbers: [`/api/truth`](https://fluxrbot.com/api/truth) · [strategies page](https://fluxrbot.com/strategies/?utm_source=github&utm_medium=readme)._
+_Updated 2026-10-02 from the live database. Same numbers: [`/api/truth`](https://fluxrbot.com/api/truth) · [strategies page](https://fluxrbot.com/strategies/?utm_source=github&utm_medium=readme)._
 
 **Mode:** paper only. No live orders. Trading since 2026-07-31.
 
 | What | Count |
 |---|---|
-| News events read | 218,570 |
-| Event → contract links | 462,874 |
+| News events read | 219,401 |
+| Event → contract links | 465,421 |
 | Model verdicts | 154,725 |
-| Contracts with a settled outcome | 11,420 |
-| Price points recorded | 951,539 |
-| Paper trades / refusals | 79 / 525,794 |
+| Contracts with a settled outcome | 11,455 |
+| Price points recorded | 955,771 |
+| Paper trades / refusals | 79 / 528,377 |
 
-**Does the model beat the price?** On **4,774 settled outcomes** the model's Brier score is **0.145** against **0.145** for the market price. Direction hit rate 60% vs 78% for the price. **It does not beat the price.** That is the honest answer, and it matches every independent 2025–2026 study we could find (Prophet Arena, AIA Forecaster, PolyBench, Prediction Arena).
+**Does the model beat the price?** On **5,000 settled outcomes** the model's Brier score is **0.113** against **0.113** for the market price. Direction hit rate 63% vs 83% for the price. **It does not beat the price.** That is the honest answer, and it matches every independent 2025–2026 study we could find (Prophet Arena, AIA Forecaster, PolyBench, Prediction Arena).
 
 **Strategies, each on its own $100 paper account:**
 
@@ -99,13 +99,13 @@ Total closed 74, net +$22.14. Weather's plus is one +$95 trade on a 12-trade sam
 
 | Price band | n | Avg price | YES resolved | YES − price |
 |---|---|---|---|---|
-| 0-10¢ | 1709 | 0.9¢ | 0.4% | -0.5pp |
-| 10-25¢ | 165 | 17.2¢ | 13.3% | -3.9pp |
+| 0-10¢ | 1717 | 0.9¢ | 0.4% | -0.5pp |
+| 10-25¢ | 168 | 17.2¢ | 13.7% | -3.5pp |
 | 25-40¢ | 172 | 32.7¢ | 31.4% | -1.3pp |
-| 40-60¢ | 374 | 49.8¢ | 49.5% | -0.3pp |
+| 40-60¢ | 375 | 49.8¢ | 49.6% | -0.2pp |
 | 60-75¢ | 149 | 66.7¢ | 68.5% | +1.8pp |
 | 75-90¢ | 85 | 81.8¢ | 77.6% | -4.2pp |
-| 90-100¢ | 1147 | 99.6¢ | 99.6% | 0pp |
+| 90-100¢ | 1150 | 99.6¢ | 99.6% | 0pp |
 
 Model outages in the last 60 days: 22 day(s) (2026-08-22 → 2026-09-18, gateway balance — now alerted).
 <!-- measured:end -->
