@@ -68,20 +68,20 @@ Every number in this section is regenerated from the live database every six hou
 [![paper trades](https://img.shields.io/endpoint?url=https%3A%2F%2Ffluxrbot.com%2Fapi%2Fbadge%3Fkind%3Dpaper)](https://fluxrbot.com/api/truth)
 
 <!-- measured:start -->
-_Updated 2026-10-06 from the live database. Same numbers: [`/api/truth`](https://fluxrbot.com/api/truth) · [strategies page](https://fluxrbot.com/strategies/?utm_source=github&utm_medium=readme)._
+_Updated 2026-10-07 from the live database. Same numbers: [`/api/truth`](https://fluxrbot.com/api/truth) · [strategies page](https://fluxrbot.com/strategies/?utm_source=github&utm_medium=readme)._
 
 **Mode:** paper only. No live orders. Trading since 2026-07-31.
 
 | What | Count |
 |---|---|
-| News events read | 234,320 |
-| Event → contract links | 504,337 |
+| News events read | 234,869 |
+| Event → contract links | 505,803 |
 | Model verdicts | 154,725 |
-| Contracts with a settled outcome | 12,561 |
-| Price points recorded | 1,035,203 |
-| Paper trades / refusals | 79 / 567,967 |
+| Contracts with a settled outcome | 12,602 |
+| Price points recorded | 1,039,545 |
+| Paper trades / refusals | 80 / 569,472 |
 
-**Does the model beat the price?** On **5,000 settled outcomes** the model's Brier score is **0.117** against **0.118** for the market price. Direction hit rate 61% vs 83% for the price. **It does not beat the price.** That is the honest answer, and it matches every independent 2025–2026 study we could find (Prophet Arena, AIA Forecaster, PolyBench, Prediction Arena).
+**Does the model beat the price?** On **5,000 settled outcomes** the model's Brier score is **0.116** against **0.117** for the market price. Direction hit rate 62% vs 83% for the price. **It does not beat the price.** That is the honest answer, and it matches every independent 2025–2026 study we could find (Prophet Arena, AIA Forecaster, PolyBench, Prediction Arena).
 
 **Strategies, each on its own $100 paper account:**
 
@@ -90,7 +90,7 @@ _Updated 2026-10-06 from the live database. Same numbers: [`/api/truth`](https:/
 | `news-llm` | on | 21 | 18 | 50% | $-0.66 |
 | `group-arb` | on | 37 | 37 | 54% | $-0.34 |
 | `cross-venue-arb` | on | 2 | 0 | — | +$0 |
-| `weather` | on | 13 | 13 | 39% | +$47.23 |
+| `weather` | on | 14 | 13 | 39% | +$47.23 |
 | `no-bias` | off | 6 | 6 | 17% | $-27.93 |
 
 Total closed 74, net +$18.3. Weather's plus is one +$95 trade on a 12-trade sample. `no-bias` was switched off on 2026-09-13 after 1 hit in 6: the overpricing it was built on did not hold out of sample. Neither is an edge; we say so.
@@ -99,13 +99,13 @@ Total closed 74, net +$18.3. Weather's plus is one +$95 trade on a 12-trade samp
 
 | Price band | n | Avg price | YES resolved | YES − price |
 |---|---|---|---|---|
-| 0-10¢ | 1851 | 0.9¢ | 0.4% | -0.5pp |
-| 10-25¢ | 182 | 17.2¢ | 14.3% | -2.9pp |
+| 0-10¢ | 1857 | 0.9¢ | 0.4% | -0.5pp |
+| 10-25¢ | 183 | 17.2¢ | 14.2% | -3pp |
 | 25-40¢ | 182 | 32.5¢ | 31.9% | -0.6pp |
-| 40-60¢ | 447 | 49.7¢ | 48.5% | -1.2pp |
-| 60-75¢ | 164 | 66.6¢ | 69.5% | +2.9pp |
-| 75-90¢ | 89 | 81.9¢ | 78.7% | -3.2pp |
-| 90-100¢ | 1267 | 99.5¢ | 99.6% | +0.1pp |
+| 40-60¢ | 448 | 49.7¢ | 48.4% | -1.3pp |
+| 60-75¢ | 165 | 66.6¢ | 69.7% | +3.1pp |
+| 75-90¢ | 90 | 81.9¢ | 78.9% | -3pp |
+| 90-100¢ | 1273 | 99.5¢ | 99.6% | +0.1pp |
 
 Model outages in the last 60 days: 28 day(s) (2026-08-22 → 2026-10-06, gateway balance — now alerted).
 <!-- measured:end -->
