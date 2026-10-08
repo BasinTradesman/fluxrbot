@@ -68,18 +68,18 @@ Every number in this section is regenerated from the live database every six hou
 [![paper trades](https://img.shields.io/endpoint?url=https%3A%2F%2Ffluxrbot.com%2Fapi%2Fbadge%3Fkind%3Dpaper)](https://fluxrbot.com/api/truth)
 
 <!-- measured:start -->
-_Updated 2026-10-07 from the live database. Same numbers: [`/api/truth`](https://fluxrbot.com/api/truth) · [strategies page](https://fluxrbot.com/strategies/?utm_source=github&utm_medium=readme)._
+_Updated 2026-10-08 from the live database. Same numbers: [`/api/truth`](https://fluxrbot.com/api/truth) · [strategies page](https://fluxrbot.com/strategies/?utm_source=github&utm_medium=readme)._
 
 **Mode:** paper only. No live orders. Trading since 2026-07-31.
 
 | What | Count |
 |---|---|
-| News events read | 237,279 |
-| Event → contract links | 512,110 |
+| News events read | 237,864 |
+| Event → contract links | 513,733 |
 | Model verdicts | 154,725 |
-| Contracts with a settled outcome | 12,737 |
-| Price points recorded | 1,051,255 |
-| Paper trades / refusals | 80 / 575,856 |
+| Contracts with a settled outcome | 12,760 |
+| Price points recorded | 1,055,469 |
+| Paper trades / refusals | 80 / 577,506 |
 
 **Does the model beat the price?** On **5,000 settled outcomes** the model's Brier score is **0.116** against **0.117** for the market price. Direction hit rate 62% vs 83% for the price. **It does not beat the price.** That is the honest answer, and it matches every independent 2025–2026 study we could find (Prophet Arena, AIA Forecaster, PolyBench, Prediction Arena).
 
@@ -90,22 +90,22 @@ _Updated 2026-10-07 from the live database. Same numbers: [`/api/truth`](https:/
 | `news-llm` | on | 21 | 18 | 50% | $-0.66 |
 | `group-arb` | on | 37 | 37 | 54% | $-0.34 |
 | `cross-venue-arb` | on | 2 | 0 | — | +$0 |
-| `weather` | on | 14 | 13 | 39% | +$47.23 |
+| `weather` | on | 14 | 14 | 36% | +$37.13 |
 | `no-bias` | off | 6 | 6 | 17% | $-27.93 |
 
-Total closed 74, net +$18.3. Weather's plus is one +$95 trade on a 12-trade sample. `no-bias` was switched off on 2026-09-13 after 1 hit in 6: the overpricing it was built on did not hold out of sample. Neither is an edge; we say so.
+Total closed 75, net +$8.2. Weather's plus is one +$95 trade on a 12-trade sample. `no-bias` was switched off on 2026-09-13 after 1 hit in 6: the overpricing it was built on did not hold out of sample. Neither is an edge; we say so.
 
 **Market calibration, our own data (all categories, price ~24 h before close):**
 
 | Price band | n | Avg price | YES resolved | YES − price |
 |---|---|---|---|---|
-| 0-10¢ | 1867 | 0.9¢ | 0.4% | -0.5pp |
+| 0-10¢ | 1872 | 0.9¢ | 0.4% | -0.5pp |
 | 10-25¢ | 185 | 17.2¢ | 14.1% | -3.1pp |
-| 25-40¢ | 182 | 32.5¢ | 31.9% | -0.6pp |
+| 25-40¢ | 183 | 32.6¢ | 32.2% | -0.4pp |
 | 40-60¢ | 454 | 49.7¢ | 48.2% | -1.5pp |
 | 60-75¢ | 166 | 66.6¢ | 69.3% | +2.7pp |
 | 75-90¢ | 93 | 82¢ | 79.6% | -2.4pp |
-| 90-100¢ | 1281 | 99.5¢ | 99.6% | +0.1pp |
+| 90-100¢ | 1286 | 99.5¢ | 99.6% | +0.1pp |
 
 Model outages in the last 60 days: 29 day(s) (2026-08-22 → 2026-10-07, gateway balance — now alerted).
 <!-- measured:end -->
