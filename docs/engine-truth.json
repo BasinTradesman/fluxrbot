@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T10:20:00.168Z",
+  "generatedAt": "2026-10-18T16:20:00.167Z",
   "mode": "paper",
   "liveTrading": false,
   "counts": {
@@ -10,7 +10,7 @@
     "activeMarkets": 1490,
     "pricePoints": 1216863,
     "trades": 83,
-    "skips": 650890,
+    "skips": 650898,
     "closedTrades": 78,
     "tradingSince": "2026-07-31T23:33:28.861Z",
     "devices": 2,
@@ -63,7 +63,7 @@
       "pnlUsd": 0,
       "startBalance": 100,
       "balance": 100,
-      "lastAt": "2026-10-18T10:05:44.809Z",
+      "lastAt": "2026-10-18T16:05:47.675Z",
       "halted": null
     },
     {
@@ -144,31 +144,31 @@
   "topRefusals7d": [
     {
       "reason": "направление новости неясно",
-      "n": 10707
+      "n": 10254
     },
     {
       "reason": "книга у края (0¢)",
-      "n": 2893
+      "n": 2860
     },
     {
       "reason": "книга у края (1¢)",
-      "n": 2168
+      "n": 2101
     },
     {
       "reason": "книга у края (2¢)",
-      "n": 2092
+      "n": 2043
     },
     {
       "reason": "привязка слабая (0.649 < 0.7)",
-      "n": 1247
+      "n": 1228
     },
     {
       "reason": "книга у края (3¢)",
-      "n": 1127
+      "n": 1091
     },
     {
       "reason": "привязка слабая (0.571 < 0.7)",
-      "n": 1049
+      "n": 1044
     },
     {
       "reason": "привязка слабая (0.559 < 0.7)",
@@ -1350,7 +1350,7 @@
   "claims": {
     "allowed": [
       "Paper mode only. 83 paper trades, 78 closed, since 2026-07-31.",
-      "650,890 logged refusals with reasons — every decision written down.",
+      "650,898 logged refusals with reasons — every decision written down.",
       "On 5000 settled outcomes the model's Brier score is 0.115 vs 0.116 for the market price — the model does not beat the price.",
       "14,463 settled outcomes and 1,216,863 price points measured — the market calibration table is ours, not quoted.",
       "No wallet private key is ever requested; Polymarket stays signal-only, Kalshi connects with an API key that stays on your machine.",

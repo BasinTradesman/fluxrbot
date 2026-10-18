@@ -79,7 +79,7 @@ _Updated 2026-10-18 from the live database. Same numbers: [`/api/truth`](https:/
 | Model verdicts | 154,725 |
 | Contracts with a settled outcome | 14,463 |
 | Price points recorded | 1,216,863 |
-| Paper trades / refusals | 83 / 650,890 |
+| Paper trades / refusals | 83 / 650,898 |
 
 **Does the model beat the price?** On **5,000 settled outcomes** the model's Brier score is **0.115** against **0.116** for the market price. Direction hit rate 61% vs 83% for the price. **It does not beat the price.** That is the honest answer, and it matches every independent 2025–2026 study we could find (Prophet Arena, AIA Forecaster, PolyBench, Prediction Arena).
 
