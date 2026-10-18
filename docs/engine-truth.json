@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T16:20:00.167Z",
+  "generatedAt": "2026-10-18T22:20:00.420Z",
   "mode": "paper",
   "liveTrading": false,
   "counts": {
@@ -10,7 +10,7 @@
     "activeMarkets": 1490,
     "pricePoints": 1216863,
     "trades": 83,
-    "skips": 650898,
+    "skips": 650906,
     "closedTrades": 78,
     "tradingSince": "2026-07-31T23:33:28.861Z",
     "devices": 2,
@@ -63,7 +63,7 @@
       "pnlUsd": 0,
       "startBalance": 100,
       "balance": 100,
-      "lastAt": "2026-10-18T16:05:47.675Z",
+      "lastAt": "2026-10-18T22:05:49.972Z",
       "halted": null
     },
     {
@@ -98,7 +98,7 @@
     "pnlUsd": -3.34
   },
   "outages": {
-    "silentDays": 39,
+    "silentDays": 40,
     "days": [
       "2026-08-22",
       "2026-08-23",
@@ -138,41 +138,42 @@
       "2026-10-14",
       "2026-10-15",
       "2026-10-16",
-      "2026-10-17"
+      "2026-10-17",
+      "2026-10-18"
     ]
   },
   "topRefusals7d": [
     {
       "reason": "направление новости неясно",
-      "n": 10254
+      "n": 9735
     },
     {
       "reason": "книга у края (0¢)",
-      "n": 2860
+      "n": 2777
     },
     {
       "reason": "книга у края (1¢)",
-      "n": 2101
+      "n": 2033
     },
     {
       "reason": "книга у края (2¢)",
-      "n": 2043
+      "n": 1988
     },
     {
       "reason": "привязка слабая (0.649 < 0.7)",
-      "n": 1228
+      "n": 1199
     },
     {
       "reason": "книга у края (3¢)",
-      "n": 1091
+      "n": 1062
     },
     {
       "reason": "привязка слабая (0.571 < 0.7)",
-      "n": 1044
+      "n": 1022
     },
     {
       "reason": "привязка слабая (0.559 < 0.7)",
-      "n": 1023
+      "n": 1012
     }
   ],
   "marketCalibration": [
@@ -1350,11 +1351,11 @@
   "claims": {
     "allowed": [
       "Paper mode only. 83 paper trades, 78 closed, since 2026-07-31.",
-      "650,898 logged refusals with reasons — every decision written down.",
+      "650,906 logged refusals with reasons — every decision written down.",
       "On 5000 settled outcomes the model's Brier score is 0.115 vs 0.116 for the market price — the model does not beat the price.",
       "14,463 settled outcomes and 1,216,863 price points measured — the market calibration table is ours, not quoted.",
       "No wallet private key is ever requested; Polymarket stays signal-only, Kalshi connects with an API key that stays on your machine.",
-      "Model was silent 39 day(s) in the last 60 (gateway outage) — now watched by an alert."
+      "Model was silent 40 day(s) in the last 60 (gateway outage) — now watched by an alert."
     ],
     "forbidden": [
       "Any claim of profitability, ROI, win rate as a selling point, or 'beats the market'.",
