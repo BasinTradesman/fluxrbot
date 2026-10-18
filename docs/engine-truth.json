@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-10-17T16:20:08.585Z",
+  "generatedAt": "2026-10-18T02:48:11.983Z",
   "mode": "paper",
   "liveTrading": false,
   "counts": {
-    "events": 264268,
-    "links": 584435,
+    "events": 264311,
+    "links": 584574,
     "verdicts": 154725,
     "settledOutcomes": 14367,
-    "activeMarkets": 1424,
-    "pricePoints": 1214299,
+    "activeMarkets": 1420,
+    "pricePoints": 1214592,
     "trades": 83,
-    "skips": 649672,
+    "skips": 649818,
     "closedTrades": 78,
     "tradingSince": "2026-07-31T23:33:28.861Z",
     "devices": 2,
@@ -24,7 +24,7 @@
     "hitRateBook": 0.829,
     "beatsBook": false,
     "shiftCeiling": "0.50",
-    "computedAt": "2026-10-17T02:10:04.935Z"
+    "computedAt": "2026-10-18T02:48:15.008Z"
   },
   "strategies": [
     {
@@ -37,7 +37,7 @@
       "pnlUsd": -0.66,
       "startBalance": 100,
       "balance": 99.34,
-      "lastAt": "2026-10-17T16:18:20.851Z",
+      "lastAt": "2026-10-17T16:36:21.092Z",
       "halted": null
     },
     {
@@ -50,7 +50,7 @@
       "pnlUsd": -0.34,
       "startBalance": 100,
       "balance": 99.66,
-      "lastAt": "2026-10-17T15:52:20.848Z",
+      "lastAt": "2026-10-17T16:37:23.556Z",
       "halted": null
     },
     {
@@ -63,7 +63,7 @@
       "pnlUsd": 0,
       "startBalance": 100,
       "balance": 100,
-      "lastAt": "2026-10-17T16:07:21.119Z",
+      "lastAt": "2026-10-17T16:37:24.466Z",
       "halted": null
     },
     {
@@ -98,7 +98,7 @@
     "pnlUsd": -3.34
   },
   "outages": {
-    "silentDays": 38,
+    "silentDays": 39,
     "days": [
       "2026-08-22",
       "2026-08-23",
@@ -137,41 +137,42 @@
       "2026-10-13",
       "2026-10-14",
       "2026-10-15",
-      "2026-10-16"
+      "2026-10-16",
+      "2026-10-17"
     ]
   },
   "topRefusals7d": [
     {
       "reason": "направление новости неясно",
-      "n": 11343
+      "n": 10674
     },
     {
       "reason": "книга у края (0¢)",
-      "n": 2993
+      "n": 2761
     },
     {
       "reason": "книга у края (1¢)",
-      "n": 2221
+      "n": 2161
     },
     {
       "reason": "книга у края (2¢)",
-      "n": 2133
+      "n": 2089
     },
     {
       "reason": "привязка слабая (0.649 < 0.7)",
-      "n": 1259
+      "n": 1252
     },
     {
       "reason": "книга у края (3¢)",
-      "n": 1166
+      "n": 1134
     },
     {
       "reason": "привязка слабая (0.571 < 0.7)",
-      "n": 1115
+      "n": 1094
     },
     {
       "reason": "привязка слабая (0.559 < 0.7)",
-      "n": 1025
+      "n": 1022
     }
   ],
   "marketCalibration": [
@@ -1349,11 +1350,11 @@
   "claims": {
     "allowed": [
       "Paper mode only. 83 paper trades, 78 closed, since 2026-07-31.",
-      "649,672 logged refusals with reasons — every decision written down.",
+      "649,818 logged refusals with reasons — every decision written down.",
       "On 5000 settled outcomes the model's Brier score is 0.115 vs 0.116 for the market price — the model does not beat the price.",
-      "14,367 settled outcomes and 1,214,299 price points measured — the market calibration table is ours, not quoted.",
+      "14,367 settled outcomes and 1,214,592 price points measured — the market calibration table is ours, not quoted.",
       "No wallet private key is ever requested; Polymarket stays signal-only, Kalshi connects with an API key that stays on your machine.",
-      "Model was silent 38 day(s) in the last 60 (gateway outage) — now watched by an alert."
+      "Model was silent 39 day(s) in the last 60 (gateway outage) — now watched by an alert."
     ],
     "forbidden": [
       "Any claim of profitability, ROI, win rate as a selling point, or 'beats the market'.",
