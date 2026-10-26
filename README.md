@@ -68,18 +68,18 @@ Every number in this section is regenerated from the live database every six hou
 [![paper trades](https://img.shields.io/endpoint?url=https%3A%2F%2Ffluxrbot.com%2Fapi%2Fbadge%3Fkind%3Dpaper)](https://fluxrbot.com/api/truth)
 
 <!-- measured:start -->
-_Updated 2026-10-25 from the live database. Same numbers: [`/api/truth`](https://fluxrbot.com/api/truth) · [strategies page](https://fluxrbot.com/strategies/?utm_source=github&utm_medium=readme)._
+_Updated 2026-10-26 from the live database. Same numbers: [`/api/truth`](https://fluxrbot.com/api/truth) · [strategies page](https://fluxrbot.com/strategies/?utm_source=github&utm_medium=readme)._
 
 **Mode:** paper only. No live orders. Trading since 2026-07-31.
 
 | What | Count |
 |---|---|
-| News events read | 284,201 |
-| Event → contract links | 639,692 |
+| News events read | 284,737 |
+| Event → contract links | 641,141 |
 | Model verdicts | 154,996 |
-| Contracts with a settled outcome | 15,590 |
-| Price points recorded | 1,348,294 |
-| Paper trades / refusals | 83 / 705,859 |
+| Contracts with a settled outcome | 15,627 |
+| Price points recorded | 1,353,745 |
+| Paper trades / refusals | 83 / 707,343 |
 
 **Does the model beat the price?** On **5,000 settled outcomes** the model's Brier score is **0.115** against **0.116** for the market price. Direction hit rate 61% vs 83% for the price. **It does not beat the price.** That is the honest answer, and it matches every independent 2025–2026 study we could find (Prophet Arena, AIA Forecaster, PolyBench, Prediction Arena).
 
@@ -99,13 +99,13 @@ Total closed 78, net $-3.34. Weather's plus is one +$95 trade on a 12-trade samp
 
 | Price band | n | Avg price | YES resolved | YES − price |
 |---|---|---|---|---|
-| 0-10¢ | 2240 | 0.8¢ | 0.3% | -0.5pp |
-| 10-25¢ | 212 | 17.2¢ | 15.6% | -1.6pp |
-| 25-40¢ | 225 | 32.5¢ | 35.6% | +3.1pp |
-| 40-60¢ | 624 | 49.4¢ | 49.5% | +0.1pp |
-| 60-75¢ | 191 | 66.6¢ | 69.6% | +3pp |
-| 75-90¢ | 119 | 81.9¢ | 79.8% | -2.1pp |
-| 90-100¢ | 1526 | 99.5¢ | 99.6% | +0.1pp |
+| 0-10¢ | 2254 | 0.8¢ | 0.3% | -0.5pp |
+| 10-25¢ | 213 | 17.2¢ | 16% | -1.2pp |
+| 25-40¢ | 226 | 32.6¢ | 35.4% | +2.8pp |
+| 40-60¢ | 626 | 49.4¢ | 49.5% | +0.1pp |
+| 60-75¢ | 193 | 66.6¢ | 69.9% | +3.3pp |
+| 75-90¢ | 121 | 82¢ | 79.3% | -2.7pp |
+| 90-100¢ | 1529 | 99.5¢ | 99.6% | +0.1pp |
 
 Model outages in the last 60 days: 41 day(s) (2026-08-27 → 2026-10-25, gateway balance — now alerted).
 <!-- measured:end -->
