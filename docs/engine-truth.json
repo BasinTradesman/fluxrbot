@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-10-28T23:20:02.277Z",
+  "generatedAt": "2026-10-29T05:20:00.506Z",
   "mode": "paper",
   "liveTrading": false,
   "counts": {
-    "events": 292935,
-    "links": 664352,
+    "events": 293453,
+    "links": 665900,
     "verdicts": 154996,
-    "settledOutcomes": 16038,
-    "activeMarkets": 1720,
-    "pricePoints": 1409530,
+    "settledOutcomes": 16050,
+    "activeMarkets": 1673,
+    "pricePoints": 1415602,
     "trades": 83,
-    "skips": 730862,
+    "skips": 732442,
     "closedTrades": 78,
     "tradingSince": "2026-07-31T23:33:28.861Z",
     "devices": 2,
@@ -20,11 +20,11 @@
     "settled": 5000,
     "brier": 0.115,
     "brierBook": 0.116,
-    "hitRate": 0.614,
-    "hitRateBook": 0.826,
+    "hitRate": 0.613,
+    "hitRateBook": 0.825,
     "beatsBook": false,
     "shiftCeiling": "0.50",
-    "computedAt": "2026-10-28T03:10:05.260Z"
+    "computedAt": "2026-10-29T03:10:00.632Z"
   },
   "strategies": [
     {
@@ -37,7 +37,7 @@
       "pnlUsd": -0.66,
       "startBalance": 100,
       "balance": 99.34,
-      "lastAt": "2026-10-28T23:16:23.850Z",
+      "lastAt": "2026-10-29T05:15:23.039Z",
       "halted": null
     },
     {
@@ -50,7 +50,7 @@
       "pnlUsd": -0.34,
       "startBalance": 100,
       "balance": 99.66,
-      "lastAt": "2026-10-28T22:51:30.613Z",
+      "lastAt": "2026-10-29T05:06:31.077Z",
       "halted": null
     },
     {
@@ -63,7 +63,7 @@
       "pnlUsd": 0,
       "startBalance": 100,
       "balance": 100,
-      "lastAt": "2026-10-28T22:51:31.041Z",
+      "lastAt": "2026-10-29T04:51:31.140Z",
       "halted": null
     },
     {
@@ -146,35 +146,35 @@
   "topRefusals7d": [
     {
       "reason": "направление новости неясно",
-      "n": 9409
-    },
-    {
-      "reason": "книга у края (1¢)",
-      "n": 2758
+      "n": 9126
     },
     {
       "reason": "книга у края (0¢)",
-      "n": 2743
+      "n": 2756
+    },
+    {
+      "reason": "книга у края (1¢)",
+      "n": 2744
     },
     {
       "reason": "книга у края (2¢)",
-      "n": 2300
+      "n": 2305
     },
     {
       "reason": "привязка слабая (0.690 < 0.7)",
-      "n": 1640
-    },
-    {
-      "reason": "привязка слабая (0.590 < 0.7)",
-      "n": 1391
+      "n": 1646
     },
     {
       "reason": "привязка слабая (0.660 < 0.7)",
-      "n": 1319
+      "n": 1358
+    },
+    {
+      "reason": "привязка слабая (0.590 < 0.7)",
+      "n": 1320
     },
     {
       "reason": "привязка слабая (0.673 < 0.7)",
-      "n": 1171
+      "n": 1242
     }
   ],
   "marketCalibration": [
@@ -182,7 +182,7 @@
       "category": "all",
       "hoursBefore": 6,
       "band": "0-10",
-      "n": 6460,
+      "n": 6465,
       "avgPrice": 0.4,
       "yesPct": 0.4,
       "yesMinusPrice": 0
@@ -191,7 +191,7 @@
       "category": "all",
       "hoursBefore": 6,
       "band": "10-25",
-      "n": 355,
+      "n": 356,
       "avgPrice": 17.8,
       "yesPct": 17.7,
       "yesMinusPrice": -0.1
@@ -209,7 +209,7 @@
       "category": "all",
       "hoursBefore": 6,
       "band": "40-60",
-      "n": 1791,
+      "n": 1792,
       "avgPrice": 49.7,
       "yesPct": 50.4,
       "yesMinusPrice": 0.7
@@ -236,7 +236,7 @@
       "category": "all",
       "hoursBefore": 6,
       "band": "90-100",
-      "n": 4470,
+      "n": 4473,
       "avgPrice": 99.7,
       "yesPct": 99.6,
       "yesMinusPrice": -0.1
@@ -245,7 +245,7 @@
       "category": "all",
       "hoursBefore": 24,
       "band": "0-10",
-      "n": 2310,
+      "n": 2311,
       "avgPrice": 0.8,
       "yesPct": 0.3,
       "yesMinusPrice": -0.5
@@ -299,7 +299,7 @@
       "category": "all",
       "hoursBefore": 24,
       "band": "90-100",
-      "n": 1570,
+      "n": 1571,
       "avgPrice": 99.5,
       "yesPct": 99.6,
       "yesMinusPrice": 0.1
@@ -308,7 +308,7 @@
       "category": "all",
       "hoursBefore": 48,
       "band": "0-10",
-      "n": 2077,
+      "n": 2078,
       "avgPrice": 0.8,
       "yesPct": 0.5,
       "yesMinusPrice": -0.3
@@ -362,7 +362,7 @@
       "category": "all",
       "hoursBefore": 48,
       "band": "90-100",
-      "n": 1421,
+      "n": 1422,
       "avgPrice": 99.7,
       "yesPct": 99.7,
       "yesMinusPrice": 0
@@ -371,7 +371,7 @@
       "category": "all",
       "hoursBefore": 168,
       "band": "0-10",
-      "n": 811,
+      "n": 812,
       "avgPrice": 1.5,
       "yesPct": 0.7,
       "yesMinusPrice": -0.8
@@ -398,10 +398,10 @@
       "category": "all",
       "hoursBefore": 168,
       "band": "40-60",
-      "n": 632,
+      "n": 633,
       "avgPrice": 49,
-      "yesPct": 49.8,
-      "yesMinusPrice": 0.8
+      "yesPct": 49.9,
+      "yesMinusPrice": 0.9
     },
     {
       "category": "all",
@@ -434,7 +434,7 @@
       "category": "crypto",
       "hoursBefore": 6,
       "band": "0-10",
-      "n": 747,
+      "n": 749,
       "avgPrice": 1.2,
       "yesPct": 1.3,
       "yesMinusPrice": 0.1
@@ -614,7 +614,7 @@
       "category": "economics",
       "hoursBefore": 6,
       "band": "0-10",
-      "n": 81,
+      "n": 82,
       "avgPrice": 0.6,
       "yesPct": 0,
       "yesMinusPrice": -0.6
@@ -632,7 +632,7 @@
       "category": "economics",
       "hoursBefore": 24,
       "band": "0-10",
-      "n": 60,
+      "n": 61,
       "avgPrice": 0.9,
       "yesPct": 0,
       "yesMinusPrice": -0.9
@@ -650,7 +650,7 @@
       "category": "economics",
       "hoursBefore": 48,
       "band": "0-10",
-      "n": 53,
+      "n": 54,
       "avgPrice": 0.8,
       "yesPct": 0,
       "yesMinusPrice": -0.8
@@ -668,10 +668,10 @@
       "category": "economics",
       "hoursBefore": 168,
       "band": "0-10",
-      "n": 47,
-      "avgPrice": 1.7,
+      "n": 48,
+      "avgPrice": 1.6,
       "yesPct": 0,
-      "yesMinusPrice": -1.7
+      "yesMinusPrice": -1.6
     },
     {
       "category": "economics",
@@ -1082,7 +1082,7 @@
       "category": "unknown",
       "hoursBefore": 6,
       "band": "0-10",
-      "n": 4181,
+      "n": 4182,
       "avgPrice": 0.3,
       "yesPct": 0.1,
       "yesMinusPrice": -0.2
@@ -1109,7 +1109,7 @@
       "category": "unknown",
       "hoursBefore": 6,
       "band": "40-60",
-      "n": 1365,
+      "n": 1366,
       "avgPrice": 49.7,
       "yesPct": 50.1,
       "yesMinusPrice": 0.4
@@ -1136,7 +1136,7 @@
       "category": "unknown",
       "hoursBefore": 6,
       "band": "90-100",
-      "n": 3268,
+      "n": 3271,
       "avgPrice": 99.8,
       "yesPct": 99.8,
       "yesMinusPrice": 0
@@ -1199,7 +1199,7 @@
       "category": "unknown",
       "hoursBefore": 24,
       "band": "90-100",
-      "n": 1090,
+      "n": 1091,
       "avgPrice": 99.8,
       "yesPct": 99.9,
       "yesMinusPrice": 0.1
@@ -1262,7 +1262,7 @@
       "category": "unknown",
       "hoursBefore": 48,
       "band": "90-100",
-      "n": 1058,
+      "n": 1059,
       "avgPrice": 99.8,
       "yesPct": 100,
       "yesMinusPrice": 0.2
@@ -1298,10 +1298,10 @@
       "category": "unknown",
       "hoursBefore": 168,
       "band": "40-60",
-      "n": 602,
+      "n": 603,
       "avgPrice": 49.1,
-      "yesPct": 49.3,
-      "yesMinusPrice": 0.2
+      "yesPct": 49.4,
+      "yesMinusPrice": 0.3
     },
     {
       "category": "unknown",
@@ -1334,7 +1334,7 @@
       "category": "weather",
       "hoursBefore": 6,
       "band": "0-10",
-      "n": 811,
+      "n": 812,
       "avgPrice": 0.3,
       "yesPct": 0.7,
       "yesMinusPrice": 0.4
@@ -1406,9 +1406,9 @@
   "claims": {
     "allowed": [
       "Paper mode only. 83 paper trades, 78 closed, since 2026-07-31.",
-      "730,862 logged refusals with reasons — every decision written down.",
+      "732,442 logged refusals with reasons — every decision written down.",
       "On 5000 settled outcomes the model's Brier score is 0.115 vs 0.116 for the market price — the model does not beat the price.",
-      "16,038 settled outcomes and 1,409,530 price points measured — the market calibration table is ours, not quoted.",
+      "16,050 settled outcomes and 1,415,602 price points measured — the market calibration table is ours, not quoted.",
       "No wallet private key is ever requested; Polymarket stays signal-only, Kalshi connects with an API key that stays on your machine.",
       "Model was silent 41 day(s) in the last 60 (gateway outage) — now watched by an alert."
     ],
